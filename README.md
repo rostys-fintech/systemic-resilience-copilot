@@ -8,7 +8,7 @@ Systemic Resilience Copilot helps an operational-resilience analyst identify **w
 ## What it does
 The production flow is:
 
-**Scenario → Apertus → Deterministic rules → Decision → Apertus challenge / explanation → Fix / next evidence gap**
+**Scenario → Apertus → Deterministic rules → Decision → Apertus challenge / explanation → Fix / next evidence gap → Systemic lens**
 
 Apertus structures a normal-language recovery scenario into a constrained schema. Missing facts remain `UNKNOWN`. The deterministic engine then walks the ordered recovery chain and stops at the first binding or unresolved condition. Apertus can challenge and explain that already-fixed decision, but cannot override it.
 
@@ -42,6 +42,15 @@ Apertus handles language-heavy work that static rules alone do poorly:
 
 The deterministic layer remains authoritative for the ordered recovery state and next action.
 
+## Public evidence boundary
+The public-safe prototype is deliberately **not** presented as a substitute for confidential supervisory information.
+
+Public evidence can support a reproducible screen of disclosed provider/service relationships, workload context, stated recovery-path facts, public incidents and disclosed recovery-test results. But bank-specific architecture, identity dependencies, contractual recovery entitlements, assured capacity, priority rights, the full simultaneous-demand set and breaker thresholds may require supervisory or private evidence.
+
+When those facts are missing, the tool does not guess. The state remains `UNKNOWN` and the output becomes an evidence request or test. A shared recovery resource therefore does not become a capacity-shortage claim unless measured demand and assured capacity evidence justify it.
+
+See [`PUBLIC_EVIDENCE_BOUNDARY.md`](./PUBLIC_EVIDENCE_BOUNDARY.md).
+
 ## Architecture
 - browser UI: `app-v10.html`, `app-v10.css`, `app-v10.js`
 - production root: `/` redirects to `app-v10.html`
@@ -60,6 +69,7 @@ The deterministic layer remains authoritative for the ordered recovery state and
 - a shared provider does not automatically imply a shared failure.
 - backup existence does not prove executable recovery.
 - a capacity shortage is not claimed before the relevant demand/capacity evidence exists.
+- public silence is not treated as proof that private recovery capability is absent.
 - no probability or provider-danger score is produced.
 
 ## Local QA
@@ -80,6 +90,7 @@ Then open `http://127.0.0.1:18765`.
 5. Open `/api/apertus/status`; it should return `mode: live` and `secret_exposed: false`.
 6. Open the production root and run the default scenario with **Structure with Apertus & analyse**.
 7. Press **Why? Ask Apertus** to run the live challenge / explanation step.
+8. After fixing the main execution gap, open the **Systemic lens** to see why shared recovery demand still does not justify an unsupported capacity-shortage claim.
 
 Do not place the Hugging Face token in GitHub, client-side code, or screenshots.
 
