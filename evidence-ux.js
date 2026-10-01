@@ -41,7 +41,8 @@
 
   function li(text){return `<li>${String(text).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))}</li>`}
   function renderMain(){
-    if(!main||!parsedPanel||parsedPanel.classList.contains('hidden'))return;
+    if(!main||!parsedPanel)return;
+    if(parsedPanel.classList.contains('hidden')){main.classList.add('hidden');return;}
     main.classList.remove('hidden');
     const vals=[
       ['Workload',$('pWork')?.textContent],['Recovery target',$('pTol')?.textContent],['Failure domain',$('pFail')?.textContent],
