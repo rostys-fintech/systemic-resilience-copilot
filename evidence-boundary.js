@@ -20,4 +20,11 @@
 
   const footer=document.querySelector('.footer');
   if(footer&&footer.parentNode) footer.parentNode.insertBefore(card,footer);
+
+  if(!document.querySelector('script[data-evidence-ux]')){
+    const s=document.createElement('script');
+    s.src='/evidence-ux.js';
+    s.dataset.evidenceUx='1';
+    document.body.appendChild(s);
+  }
 })();
