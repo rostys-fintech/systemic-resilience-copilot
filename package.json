@@ -1,0 +1,11 @@
+{
+  "name":"systemic-resilience-copilot",
+  "version":"1.0.0",
+  "private":true,
+  "type":"module",
+  "scripts":{
+    "validate":"node scripts/validate-deploy.mjs",
+    "dev:mock":"APERTUS_MOCK=1 node scripts/mock-server.mjs"
+  },
+  "engines":{"node":">=20"}
+}
