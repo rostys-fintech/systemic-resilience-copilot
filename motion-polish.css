@@ -1,0 +1,167 @@
+/* Final live presentation polish: less label noise + restrained, theme-aware motion.
+   Presentation only. Decision logic and evidence states are untouched. */
+
+/* ---------- TEXT DENSITY ---------- */
+.processKicker,
+#parseModeTag,
+.closingPrinciple > span,
+.evidenceUXTop{display:none!important}
+
+.check small{display:none!important}
+.check{min-height:76px!important;align-content:center}
+.check .n{margin-bottom:7px!important}
+
+#whyProcess .miniSteps .mini,
+#fixProcess .miniSteps .mini,
+#systemicProcess .sysSteps .sysStep{font-weight:760!important}
+
+.ai h4{margin-bottom:10px!important}
+.ai > p{margin:7px 0!important;line-height:1.48!important}
+.ai > p:last-child[style]{display:none!important}
+
+#compareCard .head p{display:none!important}
+#evidenceBoundaryCard .kicker,
+#evidenceBoundaryCard .head p{display:none!important}
+#evidenceBoundaryCard .head{padding-bottom:18px!important}
+#evidenceBoundaryCard .evidenceCol li{margin:4px 0!important}
+
+.closingPrinciple{padding-top:22px!important;padding-bottom:22px!important}
+.closingPrinciple strong{margin-top:0!important}
+
+/* ---------- REVEAL MOTION ---------- */
+.motion-reveal{
+  opacity:0;
+  transform:translateY(16px) scale(.995);
+  filter:blur(2px);
+}
+.motion-reveal.motion-in{
+  opacity:1;
+  transform:none;
+  filter:none;
+  transition:opacity .52s cubic-bezier(.2,.8,.2,1),transform .58s cubic-bezier(.2,.8,.2,1),filter .42s ease;
+}
+
+.hero.motion-reveal{transform:translateY(8px) scale(.998)}
+.flow.motion-reveal{transition-delay:.05s}
+
+/* Ambient premium sheen, very subtle. */
+.heroVisual{position:relative;overflow:hidden}
+.heroVisual::before{
+  content:"";
+  position:absolute;
+  inset:-30% -70%;
+  pointer-events:none;
+  background:linear-gradient(105deg,transparent 43%,rgba(255,255,255,.09) 50%,transparent 57%);
+  transform:translateX(-36%);
+  animation:heroSheen 8.5s ease-in-out infinite;
+  opacity:.48;
+}
+@keyframes heroSheen{
+  0%,58%{transform:translateX(-38%);opacity:0}
+  68%{opacity:.48}
+  86%{transform:translateX(38%);opacity:.28}
+  100%{transform:translateX(38%);opacity:0}
+}
+
+/* Active journey marker. */
+.flow span{position:relative;overflow:hidden}
+.flow span.active::before{
+  content:"";
+  width:6px;height:6px;border-radius:50%;
+  position:absolute;left:8px;top:50%;transform:translateY(-50%);
+  background:currentColor;
+  opacity:.55;
+  box-shadow:0 0 0 0 currentColor;
+  animation:stagePulse 2.2s ease-out infinite;
+}
+.flow span.active{padding-left:20px!important}
+@keyframes stagePulse{
+  0%{box-shadow:0 0 0 0 color-mix(in srgb,currentColor 28%,transparent)}
+  70%{box-shadow:0 0 0 7px transparent}
+  100%{box-shadow:0 0 0 0 transparent}
+}
+
+/* Process motion: shimmer line + live card focus. */
+.progress>div,.miniBar>div{
+  position:relative;
+  overflow:hidden;
+  background-size:180% 100%!important;
+  transition:width .34s cubic-bezier(.2,.8,.2,1)!important;
+}
+.progress>div::after,.miniBar>div::after{
+  content:"";
+  position:absolute;inset:0;
+  background:linear-gradient(90deg,transparent 20%,rgba(255,255,255,.46) 50%,transparent 80%);
+  transform:translateX(-100%);
+  animation:barSweep 1.25s linear infinite;
+}
+@keyframes barSweep{to{transform:translateX(100%)}}
+
+.check.running,.mini.running,.sysStep.running{
+  transform:translateY(-2px)!important;
+  animation:workingCard 1.25s ease-in-out infinite!important;
+}
+@keyframes workingCard{
+  0%,100%{box-shadow:0 0 0 0 rgba(112,145,166,0)}
+  50%{box-shadow:0 10px 24px rgba(30,56,73,.12),0 0 0 1px rgba(139,170,190,.18)}
+}
+
+.check.pass,.mini.pass,.sysStep.pass,
+.check.warn,.mini.warn,.sysStep.warn,
+.check.fail{animation:stateArrive .42s cubic-bezier(.2,.8,.2,1) both}
+@keyframes stateArrive{
+  from{transform:scale(.975);opacity:.72}
+  to{transform:none;opacity:1}
+}
+
+/* Important result arrival. */
+.motion-result{animation:resultArrive .58s cubic-bezier(.16,.84,.24,1) both}
+@keyframes resultArrive{
+  0%{opacity:.25;transform:translateY(12px) scale(.985);filter:blur(2px)}
+  62%{opacity:1;transform:translateY(-2px) scale(1.004);filter:none}
+  100%{opacity:1;transform:none;filter:none}
+}
+
+.decision.motion-result,
+.systemicResult.motion-result,
+.ai.motion-result{
+  box-shadow:0 18px 38px rgba(12,28,40,.12)!important;
+}
+
+/* Cards feel interactive without noisy movement. */
+.why,.fact,.sysFact,.evidenceUXCol,.evidenceCol{
+  transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease!important;
+}
+@media(hover:hover){
+  .why:hover,.fact:hover,.sysFact:hover,.evidenceUXCol:hover,.evidenceCol:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 24px rgba(17,31,42,.08)!important;
+  }
+}
+
+/* Theme change gets a soft cross-fade instead of a flash. */
+html.theme-changing body::after{
+  content:"";position:fixed;inset:0;z-index:9999;pointer-events:none;
+  background:rgba(255,255,255,.035);
+  animation:themeWash .34s ease-out both;
+}
+html[data-theme="dark"].theme-changing body::after{background:rgba(48,76,98,.06)}
+@keyframes themeWash{from{opacity:1}to{opacity:0}}
+
+/* Mobile: keep visual motion, remove expensive continuous ambience. */
+@media(max-width:760px){
+  .heroVisual::before{animation:none;opacity:.10;transform:none}
+  .motion-reveal{transform:translateY(10px);filter:none}
+  .check{min-height:64px!important}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .motion-reveal,.motion-reveal.motion-in,.motion-result,
+  .heroVisual::before,.flow span.active::before,
+  .progress>div::after,.miniBar>div::after,
+  .check.running,.mini.running,.sysStep.running,
+  .check.pass,.mini.pass,.sysStep.pass,.check.warn,.mini.warn,.sysStep.warn,.check.fail,
+  html.theme-changing body::after{
+    animation:none!important;transition:none!important;transform:none!important;filter:none!important;opacity:1!important
+  }
+}
