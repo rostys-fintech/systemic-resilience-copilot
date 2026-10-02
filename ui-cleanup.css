@@ -1,0 +1,34 @@
+/* Final visual cleanup: remove duplicate / non-essential labels while preserving product logic and evidence. */
+
+/* Header: keep brand + theme control only. Runtime status still exists in DOM for app logic, but is not visual clutter. */
+#aiStatus{display:none!important}
+.brand small{display:none!important}
+.topActions{margin-left:auto!important}
+
+/* Hero: remove duplicated badges; the product state is shown inside the actual flow. */
+.heroBadges{display:none!important}
+.heroCopy .btnrow{margin-top:22px!important}
+
+/* Scenario: remove duplicate disclaimer; evidence boundary remains later in the product. */
+.scenario>.helper{display:none!important}
+.scenario+.btnrow{margin-top:18px!important}
+
+/* Bottom: keep the strong principle, remove repeated explanatory/disclaimer copy. */
+.closingPrinciple p{display:none!important}
+.footer{display:none!important}
+.closingPrinciple{margin-bottom:28px!important}
+
+/* Slightly reduce minor label noise without removing information required for decisions. */
+.heroVisualTop span,
+.stateLabel,
+.processKicker,
+.kicker{letter-spacing:.10em!important}
+
+/* Header stays compact after status removal. */
+.top{justify-content:space-between!important}
+
+@media(max-width:760px){
+  .topActions{gap:0!important}
+  .heroCopy .btnrow{margin-top:18px!important}
+  .closingPrinciple{margin-bottom:18px!important}
+}
