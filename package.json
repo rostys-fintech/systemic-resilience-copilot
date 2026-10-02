@@ -4,7 +4,7 @@
   "private":true,
   "type":"module",
   "scripts":{
-    "validate":"node scripts/validate-deploy.mjs",
+    "validate":"node scripts/validate-deploy.mjs && node scripts/post-redesign-regression.mjs",
     "dev:mock":"APERTUS_MOCK=1 node scripts/mock-server.mjs"
   },
   "engines":{"node":">=20"}
