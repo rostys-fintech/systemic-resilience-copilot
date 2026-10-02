@@ -1,0 +1,193 @@
+/* Institutional colour refinement. Presentation only; no product logic. */
+:root{
+  --bg:#f3f4f4;
+  --card:#ffffff;
+  --ink:#18232d;
+  --muted:#68737c;
+  --line:#d7dcdf;
+  --navy:#12283b;
+  --navy2:#1c3a50;
+  --blue:#49697f;
+  --bluebg:#eef2f4;
+  --green:#4f715f;
+  --greenbg:#edf3ef;
+  --amber:#8a6a32;
+  --amberbg:#f6f1e6;
+  --red:#8f4d50;
+  --redbg:#f7eeee;
+  --shadow:0 14px 34px rgba(31,43,52,.055);
+  --shadow2:0 26px 64px rgba(20,34,46,.12);
+}
+
+body{
+  background:#f3f4f4;
+  color:var(--ink);
+}
+
+.top{
+  background:rgba(250,250,249,.96);
+  border-bottom-color:#d9dddf;
+}
+.mark{
+  background:#142b3e;
+  box-shadow:0 7px 16px rgba(18,40,59,.16);
+}
+.status{
+  color:#486a58;
+  background:#eef3ef;
+  border-color:#d2dfd7;
+}
+
+/* Keep the dark navy hero and its circular pattern; remove the bright AI-blue feel. */
+.hero{
+  background:
+    radial-gradient(circle at 84% 8%,rgba(113,145,166,.18),transparent 31%),
+    linear-gradient(135deg,#0e2234 0%,#153047 56%,#193b53 100%);
+  box-shadow:0 26px 68px rgba(16,32,45,.18);
+}
+.hero:after{
+  border-color:rgba(225,236,243,.10);
+  box-shadow:0 0 0 55px rgba(225,236,243,.025),0 0 0 110px rgba(225,236,243,.018);
+}
+.heroKicker{color:#a8bdca}
+.hero h1 span{color:#c8d8e2}
+.hero p{color:#d8e1e7}
+.heroBadges span{
+  color:#e6edf1;
+  background:rgba(255,255,255,.055);
+  border-color:rgba(255,255,255,.14);
+}
+.heroVisual{
+  background:linear-gradient(180deg,rgba(255,255,255,.085),rgba(255,255,255,.045));
+  border-color:rgba(255,255,255,.13);
+}
+.proofItem{background:rgba(255,255,255,.065);border-color:rgba(255,255,255,.13)}
+.proofItem.danger{background:rgba(143,77,80,.18);border-color:rgba(205,150,153,.28)}
+.proofVs{color:#d7b8b9}
+.heroOutcome{background:#f7f7f5}
+.heroOutcome strong{color:var(--red)}
+
+.flow{
+  background:rgba(250,250,249,.94);
+  border-color:#d9dddf;
+  box-shadow:0 5px 14px rgba(30,39,46,.035);
+}
+.flow span.active{
+  color:#1d3749;
+  background:#eceff1;
+  box-shadow:inset 0 0 0 1px #d8dde0;
+}
+.flow span.done{
+  color:#4f715f;
+  background:#edf3ef;
+}
+
+.card,.process{
+  background:#fff;
+  border-color:#d8dddf;
+  box-shadow:0 14px 32px rgba(31,43,52,.05);
+}
+.head{background:linear-gradient(180deg,#fff,#fbfbfa)}
+.kicker,.processKicker{color:#6f7f89}
+
+.btn.dark{
+  background:#163247;
+  border-color:#163247;
+  box-shadow:0 7px 16px rgba(18,40,59,.12);
+}
+.btn.soft{background:#eef0f1}
+.btn:hover{box-shadow:0 7px 16px rgba(31,43,52,.08)}
+.btn:focus-visible{outline-color:rgba(73,105,127,.20)}
+
+.scenario textarea{background:#fafafa;border-color:#d5dade}
+.scenario textarea:focus{border-color:#8195a2;box-shadow:0 0 0 4px rgba(73,105,127,.08)}
+.parsed{background:#f7f8f8;border-color:#d7dde0}
+.fact{background:#fdfdfc}
+.fact.hot{background:#f7eeee;border-color:#e3cccc}
+.fact.hot b{color:#8f4d50}
+.unknown{background:#f0f2f2;color:#5f6b73}
+.tag{background:#edf3ef;color:#4f715f}
+.tag.fallback{background:#f6f1e6;color:#8a6a32}
+
+.progress>div,.miniBar>div{background:#4f6f83}
+.check.running,.mini.running,.sysStep.running{
+  border-color:#a8b7c0;
+  background:#f0f3f4;
+  color:#233b4b;
+  box-shadow:none;
+}
+.check.pass,.mini.pass,.sysStep.pass{border-color:#cad9cf;background:#edf3ef;color:#4f715f}
+.check.warn,.mini.warn,.sysStep.warn{border-color:#ddd1b4;background:#f6f1e6;color:#80642e}
+.check.fail{border-color:#dec5c7;background:#f7eeee}
+
+.decision{
+  border-color:#dec7c9;
+  border-left-color:#8f4d50;
+  background:linear-gradient(135deg,#faf5f5,#fff);
+}
+.decision:before{color:#a67b7d}
+.decision.amber{
+  border-color:#ddd3ba;
+  border-left-color:#8a6a32;
+  background:linear-gradient(135deg,#faf8f2,#fff);
+}
+.metric .bad{background:#f2e3e4;color:#8f4d50}
+.metric .op{color:#8f4d50}
+.principle{background:#f5f6f6}
+.principle.primary{
+  background:#183348;
+  border-color:#183348;
+  box-shadow:0 11px 22px rgba(18,40,59,.12);
+}
+.principle.primary small{color:#b4c4ce}
+.systemicGate{background:#f7f4eb;border-color:#ddd0ad}
+.systemicGate b{color:#765e31}
+.systemicGate p{color:#665a42}
+
+.why,.actionProcess{background:#f7f8f8;border-color:#d8dddf}
+.ai{background:#f5f7f7;border-color:#cdd6da;border-left-color:#34556b}
+.whyIcon{background:#eceff0;color:#445965}
+
+.compare .before{
+  background:#faf6f6!important;
+  border-color:#e0cbcc!important;
+}
+.compare .after{
+  background:#f5f8f6!important;
+  border-color:#cedbd2!important;
+}
+.transitionNote{background:#f0f2f1!important;color:#4c5b63!important}
+
+.fabricMap{background:#f7f8f8;border-color:#d7dcdf}
+.institution{background:#fff;border-color:#d7dcdf}
+.institution span{background:#e9edef;color:#304654}
+.fabricConnector i{background:#8296a2}
+.fabricHub{
+  background:#183348;
+  border-color:#183348;
+  box-shadow:0 13px 28px rgba(18,40,59,.14);
+}
+.sysFact{background:#fafafa}
+.sysFact.pass{background:#edf3ef;border-color:#cad9cf}
+.sysFact.warn{background:#f6f1e6;border-color:#ddd1b4}
+.systemicResult{
+  background:#f8f5ed;
+  border-color:#ddd0ad;
+  border-left-color:#8a6a32;
+}
+.systemicResult:after{color:rgba(94,75,39,.045)}
+.reject{background:#eeefef;color:#4e5b62}
+
+.evidenceUXCol{background:#f8f9f9!important}
+.evidenceUXCol.known{background:#edf3ef!important;border-color:#cad9cf!important}
+.evidenceUXCol.unknown{background:#f6f1e6!important;border-color:#ddd1b4!important}
+.evidenceUXCol.next{background:#f0f2f2!important;border-color:#d7dcdf!important}
+
+.closingPrinciple{
+  background:#172f43;
+  box-shadow:0 20px 48px rgba(18,40,59,.12);
+}
+
+@media(max-width:760px){
+  body{background:#f4f5f5}
+}
