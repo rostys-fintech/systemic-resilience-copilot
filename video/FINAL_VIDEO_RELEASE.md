@@ -1,37 +1,56 @@
-# Systemic Resilience Copilot — Final Video Release
+# Systemic Resilience Copilot — Video Release Status
 
-**Status:** FINAL POLISH PASS
+**Status:** OLD MASTER SUPERSEDED — V3 REQUIRED FOR FINAL YOUTUBE / DEVPOST SUBMISSION
 
-## Submission master
+## Legacy master
 
-- Filename: `Systemic_Resilience_Copilot_SUBMISSION_FINAL_1080p.mp4`
-- Resolution: **1920×1080**
-- Frame rate: **30 fps**
-- Duration: **146.267 seconds (2:26.3)**
-- Video: H.264 High Profile
-- Audio: AAC, 48 kHz, mono, 192 kb/s
-- Captions: burned-in English captions using the locked, 2:26.286 timing file
-- Fast-start metadata enabled for web playback
+The previously rendered file:
 
-## What changed in final polish
+`Systemic_Resilience_Copilot_SUBMISSION_FINAL_1080p.mp4`
 
-- Kept the 1080p master framing rather than upscaling the earlier 720p captioned derivative.
-- Re-burned captions directly onto the 1080p master with larger, high-contrast white text and black outline.
-- Preserved the focused product framing already present at the key proof beats:
-  - `95 min > 60 min → S5 RED / B2`
-  - `95 → 45 min → S6 UNKNOWN`
-  - `S7 UNKNOWN`
-  - `shared recovery resource ≠ proven shortage`
-- Preserved the original 2:26.3 narration and did not time-stretch audio.
+was a valid earlier public-safe walkthrough, but it is **not the preferred final submission film anymore**.
 
-## QC completed
+Legacy properties:
+- 1920×1080
+- 30 fps
+- 146.267 seconds (2:26.3)
+- H.264 + AAC
+- burned-in English captions
 
-Representative frames were visually checked at approximately 15s, 45s, 75s, 105s, 132s, and 145s. The product states, captions, and closing frame remain legible and scientifically consistent.
+## Why it was superseded
+
+The final judge-first V3 package improves:
+- exact voice / caption / UI wording alignment;
+- explicit `S6 UNKNOWN` narration;
+- tighter systemic terminology;
+- scene pacing;
+- overlay discipline;
+- caption-safe zones;
+- transition grammar;
+- visual continuity with the final live product and Devpost assets.
+
+## Current release authority
+
+Final submission must use the new film defined by:
+
+1. `video/VOICEOVER_MASTER.md`
+2. `video/VOICEOVER_CAPTIONS_V2.srt`
+3. `video/EDIT_TIMING_MAP_V2.csv`
+4. `video/SCREEN_CAPTURE_SHOTLIST.md`
+5. `video/FINAL_YOUTUBE_PRODUCTION_BIBLE.md`
+6. `video/VIDEO_SYNC_AND_DESIGN_AUDIT.md`
+7. `video/YOUTUBE_UPLOAD_PACKAGE.md`
+
+Expected final filename:
+
+`Systemic_Resilience_Copilot_YOUTUBE_FINAL_V3.mp4`
+
+Target runtime: **2:24**.
+
+## Legacy use rule
+
+Keep the old master only as a fallback/archive copy. Do not upload it to YouTube or Devpost if the V3 film can be completed.
 
 ## Claim boundary
 
-This remains a **reconstructed public-safe product walkthrough**, not a continuous live browser recording. The film must not be described as live-capture evidence. It demonstrates the intended product flow and uses the public-safe synthetic scenarios and frozen deterministic rule logic.
-
-## Release decision
-
-**PASS for submission video use**, subject to any external hackathon-specific upload size / duration rule that may apply.
+Both old and new versions remain public-safe product walkthroughs using synthetic scenarios. Neither should be described as continuous live-browser recording evidence.
