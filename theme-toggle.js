@@ -30,6 +30,15 @@
     document.head.appendChild(link);
   }
 
+  /* Global contrast guard is loaded last: dark text on light surfaces, light text on dark surfaces. */
+  if(!document.querySelector('link[data-contrast-guard]')){
+    const link=document.createElement('link');
+    link.rel='stylesheet';
+    link.href='/contrast-guard.css';
+    link.dataset.contrastGuard='1';
+    document.head.appendChild(link);
+  }
+
   let meta=document.querySelector('meta[name="theme-color"]');
   if(!meta){meta=document.createElement('meta');meta.name='theme-color';document.head.appendChild(meta)}
 
