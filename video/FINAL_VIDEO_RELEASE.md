@@ -1,6 +1,8 @@
 # Systemic Resilience Copilot — Final V3 Video Release
 
-**Status:** FINAL V3 FILM RENDERED — READY FOR FINAL QC / YOUTUBE UPLOAD
+**Status:** RELEASE LOCKED — PASS FOR YOUTUBE / DEVPOST
+
+Date: 2026-10-02
 
 ## Final submission film
 
@@ -10,9 +12,10 @@ Final Descript project:
 - Composition ID: `c3c5d223-4c8d-4427-8f29-928f664d6290`
 - Resolution: **1920×1080**
 - Frame rate: **30 fps**
-- Final composition duration: **128.4 s (2:08.4)**
-- Narration authority: clean Descript V3 master
-- Visual authority: `Systemic_Resilience_Copilot_V3_VISUAL_MASTER.mp4`
+- Composition duration: **128.4 s (2:08.4)**
+- Visual source: `V3_VISUAL_MASTER.mp4` — 128.166666 s
+- Narration source: `V3_NARRATION_MASTER.m4a` — 128.4 s
+- Final sequence: `Sequences/FINAL_SEQUENCE` — 128.4 s
 - Captions: burned into the visual master from the synchronized V3 SRT
 - Access: unlisted Descript publish
 
@@ -22,11 +25,9 @@ Final preview / share URL:
 Descript edit project:
 `https://web.descript.com/89ee0d65-05f3-4998-a6ef-969c0e543168/c3c5d`
 
+The final composition was republished successfully as **1080p / unlisted** after the hostile release audit.
+
 ## Final visual architecture
-
-The final film uses the actual product interface and public-safe product footage / frames. It does not use stock footage, avatars, generic AI art, code tours, manuscripts, or fake dashboards.
-
-Locked scene path:
 
 1. Hero / hook — backup exists ≠ executable recovery
 2. Product architecture — scenario → Apertus → rules → decision
@@ -48,26 +49,26 @@ Locked scene path:
 - no flashy preset transitions;
 - English captions synchronized to the final narration;
 - clean cuts / click-match logic / restrained motion;
-- final fade to black.
+- final branded close.
 
 ## Audio lock
 
-The author listened to the clean V3 Descript narration and confirmed that it sounds normal. Human listening QC is therefore **PASS**.
+Human listening QC: **PASS**.
+
+The author listened to the final clean Descript narration and confirmed that it sounds normal.
 
 Narration:
 - voice: Buster;
 - fresh generation;
 - no time-stretch;
 - exact V3 wording;
-- final spoken cue ends at ~2:08.31.
-
-See `video/AUDIO_RENDER_MANIFEST.md` for the authority record.
+- final timeline: 128.4 s.
 
 ## Claim boundary
 
-The film remains a **public-safe edited product demonstration**, not continuous live-browser evidence.
+The film is a **public-safe edited product demonstration**, not continuous live-browser evidence.
 
-It must not imply:
+It does not claim:
 - predicted bank failure probability;
 - a proven B3 systemic capacity shortage;
 - shared provider = shared failure;
@@ -79,20 +80,28 @@ Locked principle:
 
 **Apertus structures / challenges / explains. Deterministic rules decide. UNKNOWN remains UNKNOWN.**
 
-## Legacy master
+## Hostile release audit
 
-`Systemic_Resilience_Copilot_SUBMISSION_FINAL_1080p.mp4` (2:26.3) is superseded and is archive/fallback only.
-
-Do not upload the legacy master to YouTube or Devpost while the final V3 film is available.
-
-## Release gate
-
-Before YouTube upload, perform one final watch of the published V3 film for:
-- visual/audio synchronization;
+`video/HOSTILE_VIDEO_AUDIT.md` is now **PASS** for:
+- 1080p product readability;
+- 95 > 60 proof;
+- S5 RED · B2;
+- 45 min repair;
+- S6 UNKNOWN;
+- S7 UNKNOWN;
 - caption readability;
-- no accidental frame/crop issue;
-- `95 > 60`, `S5 RED · B2`, `45 min`, `S6 UNKNOWN`, `S7 UNKNOWN` legibility;
-- clean final fade;
-- no obsolete UI labels.
+- human narration QC;
+- public-safe claim boundary;
+- no obsolete UI badge / private material in sampled frames.
 
-If that watch passes, the next action is YouTube upload using `video/YOUTUBE_UPLOAD_PACKAGE.md`.
+## Legacy masters
+
+All earlier 2:26 and 2:24 drafts are superseded / archive-only.
+
+Do not upload them while the V3 release exists.
+
+## Release decision
+
+**FINAL V3 = RELEASE LOCKED.**
+
+Next action: YouTube upload using `video/YOUTUBE_UPLOAD_PACKAGE.md`, then use the YouTube watch URL in Devpost.
