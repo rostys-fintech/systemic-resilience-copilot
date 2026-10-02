@@ -9,9 +9,33 @@
 .heroBadges{display:none!important}
 .heroCopy .btnrow{margin-top:22px!important}
 
-/* Scenario: remove duplicate disclaimer; evidence boundary remains later in the product. */
+/* Scenario: keep the validated facts, remove technical/raw duplicate labels. */
 .scenario>.helper{display:none!important}
 .scenario+.btnrow{margin-top:18px!important}
+#parseModeTag{display:none!important}
+#pUnknown{display:none!important}
+
+/* The three-column "Evidence at a glance" panel duplicates the validated facts above
+   and could render an empty/low-contrast NEXT column before the deterministic decision.
+   Keep its data logic available in code, but do not render the duplicate panel. */
+.evidenceUX{display:none!important}
+
+/* Evidence boundary already follows the strong closing principle; avoid repeating the
+   same rule in a second callout immediately below it. */
+#evidenceBoundaryCard .evidenceRule{display:none!important}
+
+/* Process cards: keep the stage names and live progress, remove explanatory micro-copy
+   that repeats what the heading already says. */
+.check small{display:none!important}
+.check{min-height:70px!important}
+
+/* Never leave visual shells when dynamic text has not been populated yet. */
+.unknown:empty,
+.next:empty,
+.ai:empty,
+.helper:empty,
+.systemicGate p:empty,
+.transitionNote:empty{display:none!important}
 
 /* Bottom: keep the strong principle, remove repeated explanatory/disclaimer copy. */
 .closingPrinciple p{display:none!important}
@@ -31,4 +55,5 @@
   .topActions{gap:0!important}
   .heroCopy .btnrow{margin-top:18px!important}
   .closingPrinciple{margin-bottom:18px!important}
+  .check{min-height:60px!important}
 }
