@@ -30,21 +30,6 @@
     document.head.appendChild(link);
   }
 
-  /* Copy-density and motion polish are loaded after the theme layers. */
-  if(!document.querySelector('link[data-motion-polish]')){
-    const link=document.createElement('link');
-    link.rel='stylesheet';
-    link.href='/motion-polish.css';
-    link.dataset.motionPolish='1';
-    document.head.appendChild(link);
-  }
-  if(!document.querySelector('script[data-content-motion-polish]')){
-    const script=document.createElement('script');
-    script.src='/content-motion-polish.js';
-    script.dataset.contentMotionPolish='1';
-    document.body.appendChild(script);
-  }
-
   let meta=document.querySelector('meta[name="theme-color"]');
   if(!meta){meta=document.createElement('meta');meta.name='theme-color';document.head.appendChild(meta)}
 
