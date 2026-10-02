@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 620" preserveAspectRatio="xMidYMid slice">
+<defs>
+ <linearGradient id="base" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#07121f"/><stop offset=".58" stop-color="#0d2740"/><stop offset="1" stop-color="#14324b"/></linearGradient>
+ <radialGradient id="halo" cx="78%" cy="38%" r="42%"><stop stop-color="#6f99bf" stop-opacity=".18"/><stop offset="1" stop-color="#6f99bf" stop-opacity="0"/></radialGradient>
+ <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="31"/><feColorMatrix values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 .055 0"/></filter>
+</defs>
+<rect width="1600" height="620" fill="url(#base)"/><rect width="1600" height="620" fill="url(#halo)"/>
+<circle cx="1260" cy="210" r="280" fill="none" stroke="#dce8f2" stroke-opacity=".09" stroke-width="2"/>
+<circle cx="1260" cy="210" r="355" fill="none" stroke="#7ba5cc" stroke-opacity=".075" stroke-width="1.5"/>
+<circle cx="1260" cy="210" r="430" fill="none" stroke="#dce8f2" stroke-opacity=".04" stroke-width="1"/>
+<path d="M760 560C960 430 1150 420 1350 520c88 44 170 58 250 48" fill="none" stroke="#90aeca" stroke-opacity=".12" stroke-width="1.5"/>
+<path d="M720 590C930 458 1134 458 1344 554c102 46 184 54 256 42" fill="none" stroke="#f4f6f8" stroke-opacity=".07" stroke-width="1"/>
+<path d="M0 520c210-88 396-80 558 30 132 90 282 92 448 22" fill="#b9cad8" opacity=".025"/>
+<rect width="1600" height="620" filter="url(#grain)" opacity=".48"/>
+</svg>
