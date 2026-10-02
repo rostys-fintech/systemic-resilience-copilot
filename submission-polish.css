@@ -1,42 +1,139 @@
 /* Devpost / jury presentation micro-polish. Presentation layer only; no decision logic. */
-:root{--gallery-ring:0 0 0 1px rgba(13,45,82,.045),0 24px 60px rgba(20,47,80,.07)}
+:root{--gallery-ring:0 0 0 1px rgba(27,39,49,.045),0 22px 52px rgba(27,39,49,.055)}
 
-/* Keep the core demo visually stable for 3:2 gallery captures and judge scans. */
+/* Keep the dark-blue hero exactly as the visual anchor. */
 .hero,.decisionCard,.compareCard,.systemicCard{isolation:isolate}
 .hero{min-height:520px;align-items:center}
 .heroCopy{padding-right:4px}
 .heroVisual{min-height:370px;display:flex;flex-direction:column;justify-content:center}
 .heroOutcome{box-shadow:0 12px 30px rgba(3,20,38,.16)}
 
-/* Make the workflow easier to scan in one glance. */
-.flow{position:sticky;top:78px;z-index:12;backdrop-filter:blur(12px)}
-.flow span{display:inline-flex;align-items:center;min-height:34px}
+/* Everything below the hero uses a quieter institutional palette. */
+body{background:#f2f1ee;color:#202a33}
+.top{background:rgba(249,248,245,.96);border-bottom-color:#ddd9d1}
+.status{color:#496252;background:#eef2ee;border-color:#d4ddd5}
+.wrap{color:#202a33}
 
-/* Stronger visual hierarchy on the three screenshot-worthy states. */
+.card,.process,#evidenceBoundaryCard{background:#fff;border-color:#dedbd4;box-shadow:0 10px 30px rgba(31,39,45,.045)}
+.head{background:#fff;border-bottom-color:#e3e0da}
+.head h2{color:#202a33}
+.head p,.helper,.footer{color:#667078}
+.kicker,.processKicker{color:#6e7880}
+.body{background:#fff}
+.scenarioCard .body,.decisionCard .body{background:#fff}
+.scenario textarea{background:#fbfaf8;border-color:#d9d5ce;color:#202a33}
+.scenario textarea:focus{background:#fff;border-color:#9ba4aa;box-shadow:0 0 0 3px rgba(34,48,59,.07)}
+
+/* Stepper is now neutral and clickable once a stage exists. */
+.flow{position:sticky;top:78px;z-index:12;backdrop-filter:blur(12px);background:rgba(248,247,244,.95);border-color:#ddd9d1;box-shadow:0 6px 18px rgba(32,40,46,.035)}
+.flow span{display:inline-flex;align-items:center;min-height:34px;color:#707980;background:transparent;border:1px solid transparent;cursor:pointer;user-select:none}
+.flow span:hover:not(.locked){background:#efeeea;color:#27323b;border-color:#e0ddd7}
+.flow span.active{color:#24313a;background:#fff;box-shadow:inset 0 0 0 1px #d9d6cf,0 1px 2px rgba(0,0,0,.025)}
+.flow span.done{color:#4f6556;background:#eef2ee;box-shadow:inset 0 0 0 1px #d7e0d9}
+.flow span.viewing{outline:2px solid rgba(36,49,58,.12);outline-offset:1px}
+.flow span.locked{opacity:.46;cursor:not-allowed}
+.flow span:focus-visible{outline:3px solid rgba(36,49,58,.14);outline-offset:2px}
+.interactionLocked .flow span{pointer-events:none}
+
+/* Pipelines: neutral surfaces; colour appears only when status has meaning. */
+.progress,.miniBar{background:#ebe9e4}
+.progress>div,.miniBar>div{background:#40505d}
+.check,.mini,.sysStep{background:#fbfaf8;border-color:#ddd9d1;color:#667078}
+.check.running,.mini.running,.sysStep.running{background:#f1f2f1;border-color:#aeb6bb;color:#2d3a43;box-shadow:none}
+.check.pass,.mini.pass,.sysStep.pass,.sysFact.pass{background:#eef2ee;border-color:#ccd8cf;color:#496252}
+.check.warn,.mini.warn,.sysStep.warn,.sysFact.warn{background:#f5f2e9;border-color:#d9cda9;color:#76623b}
+.check.fail{background:#f7efef;border-color:#dcc5c5;color:#8a4548}
+
+/* Parsed evidence: white / stone rather than blue cards. */
+.parsed{background:#faf9f7;border-color:#ddd9d1}
+.parsedTop{color:#27323b}
+.fact{background:#fff;border-color:#dedbd4}
+.fact label{color:#707980}
+.fact.hot{background:#f7efef;border-color:#dcc5c5}
+.fact.hot b{color:#8a4548}
+.unknown{background:#f1f0ed;color:#606970;border:1px solid #e1ded8}
+.tag{background:#eef2ee;color:#496252;border:1px solid #d7e0d9}
+.tag.fallback{background:#f5f2e9;color:#76623b;border-color:#ddd1ad}
+
+/* Decision: restrained status colour, not a generated-looking red gradient. */
 .decisionCard,.compareCard,.systemicCard{box-shadow:var(--gallery-ring)}
 .decisionLayout{align-items:stretch}
-.decision{min-height:280px;display:flex;flex-direction:column;justify-content:center}
+.decision{min-height:280px;display:flex;flex-direction:column;justify-content:center;background:#fcfaf9;border-color:#d7c7c6;border-left-color:#8a4548}
+.decision:before{color:#9a6d6f}
+.decision.amber{background:#fbfaf6;border-color:#d9cfb4;border-left-color:#7a663c}
+.decision h3{color:#202a33}
+.decision p{color:#56616a}
+.metric span{background:#f0efec;color:#2b353d}
+.metric .bad{background:#f2e8e8;color:#8a4548}
+.metric .op{color:#8a4548}
+.next{color:#293741}
 .decisionPrinciples{height:100%}
-.principle{flex:1;display:flex;flex-direction:column;justify-content:center}
+.principle{flex:1;display:flex;flex-direction:column;justify-content:center;background:#faf9f7;border-color:#dedbd4}
+.principle.primary{background:#273947;border-color:#273947;box-shadow:none}
+.principle.primary small{color:#c7d0d6}
+.principle:not(.primary) strong{color:#293741}
 
+/* Buttons use one restrained ink/navy family outside the hero. */
+.btn.dark{background:#2b3d4a;color:#fff;border-color:#2b3d4a;box-shadow:none}
+.btn.dark:hover{background:#22323d;box-shadow:0 6px 14px rgba(35,49,59,.08)}
+.btn.soft{background:#f0efec;color:#2a353d;border-color:#dedbd4}
+.btn.soft:hover{background:#e9e7e2}
+
+/* Warning / evidence-request blocks are warm stone, not yellow. */
+.systemicGate{background:#f7f4ec;border-color:#d9cfb4}
+.systemicGate b{color:#6f5d39}
+.systemicGate p{color:#685f4d}
+.actionProcess{background:#faf9f7;border-color:#ddd9d1}
+.actionHead b{color:#293741}
+.ai{background:#faf9f7!important;border-color:#d8d5cf!important;border-left-color:#435563!important}
+
+/* Before / after: status differences stay visible but muted. */
 .compare{align-items:stretch}
 .compare .box{min-height:160px;display:flex;flex-direction:column;justify-content:center}
-.compare .before{background:linear-gradient(145deg,#fff5f6,#fff);border-color:#efc7ca}
-.compare .after{background:linear-gradient(145deg,#f1f9f5,#fff);border-color:#c7e1d4}
-.transitionNote{font-weight:850}
+.compare .before{background:#f8f3f2;border-color:#dbc9c8}
+.compare .before .big{color:#824246}
+.compare .after{background:#f1f4f1;border-color:#ced9d0}
+.compare .after .big{color:#496252}
+.transitionNote{font-weight:850;background:#f2f1ee;color:#59636a;border-color:#dedbd4}
 
-.fabricMap{position:relative;overflow:hidden}
-.fabricMap:after{content:"";position:absolute;inset:auto -90px -120px auto;width:260px;height:260px;border-radius:50%;border:1px solid rgba(31,111,229,.10);box-shadow:0 0 0 42px rgba(31,111,229,.035),0 0 0 84px rgba(31,111,229,.02);pointer-events:none}
-.fabricHub{position:relative;z-index:1;box-shadow:0 14px 32px rgba(31,111,229,.12)}
-.systemicResult{position:relative;overflow:hidden}
-.systemicResult:after{content:"S7";position:absolute;right:18px;top:10px;font-size:62px;font-weight:950;letter-spacing:-.08em;color:rgba(154,103,0,.055);pointer-events:none}
-.reject{font-size:11px}
+/* Systemic map keeps one dark-navy focal node, everything around it is neutral. */
+.fabricMap{position:relative;overflow:hidden;background:#faf9f7;border-color:#dedbd4}
+.fabricMap:after{content:"";position:absolute;inset:auto -90px -120px auto;width:260px;height:260px;border-radius:50%;border:1px solid rgba(45,61,74,.08);box-shadow:0 0 0 42px rgba(45,61,74,.025),0 0 0 84px rgba(45,61,74,.015);pointer-events:none}
+.institution{background:#fff;border-color:#dedbd4}
+.institution span{background:#ecebe7;color:#42515b}
+.institution small{color:#4f6556}
+.fabricConnector i{background:#aeb7bd}
+.fabricHub{position:relative;z-index:1;background:#2b3d4a;box-shadow:0 12px 28px rgba(35,49,59,.10)}
+.systemicGrid .sysFact{background:#fff;border-color:#dedbd4}
+.systemicResult{position:relative;overflow:hidden;background:#f7f4ec;border-color:#d8cba8;border-left-color:#7a663c}
+.systemicResult h3{color:#6f5d39}
+.systemicResult:after{content:"S7";position:absolute;right:18px;top:10px;font-size:62px;font-weight:950;letter-spacing:-.08em;color:rgba(71,59,35,.045);pointer-events:none}
+.reject{font-size:11px;background:#efeeea;color:#515c64}
+
+/* Dynamic evidence components: override their injected pastel styles. */
+.evidenceUX{background:#fff!important;border-color:#dedbd4!important}
+.evidenceUXCol{background:#faf9f7!important;border-color:#dedbd4!important}
+.evidenceUXCol.known{background:#eef2ee!important;border-color:#ccd8cf!important}
+.evidenceUXCol.unknown{background:#f5f2e9!important;border-color:#d9cda9!important}
+.evidenceUXCol.next{background:#f1f0ed!important;border-color:#dcd9d3!important}
+.evidenceUXCol.known .evidenceUXLabel{color:#496252!important}
+.evidenceUXCol.unknown .evidenceUXLabel{color:#76623b!important}
+.evidenceUXCol.next .evidenceUXLabel{color:#35434d!important}
+.evidenceCol{background:#faf9f7!important;border-color:#dedbd4!important}
+.evidenceRule{background:#f7f4ec!important;border-color:#d9cfb4!important;border-left-color:#7a663c!important}
+.evidenceRule b{color:#6f5d39!important}
+.evidenceRule p{color:#685f4d!important}
+.evidenceBadge{background:#ece8dc!important;color:#6f5d39!important}
+
+/* Closing section reads like a deliberate product principle, not a colour card. */
+.closingPrinciple{background:#2b3d4a;box-shadow:var(--gallery-ring)}
+.closingPrinciple span{color:#c5ced4}
+.closingPrinciple p{color:#d5dadd}
 
 /* Better readability for live screenshots. */
 .head h2{max-width:840px}
 .head p{max-width:820px}
 .fact b,.sysFact b{letter-spacing:-.015em}
-.closingPrinciple{box-shadow:var(--gallery-ring)}
 
 /* Avoid awkward motion or hover effects during screen capture. */
 @media (prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}}
