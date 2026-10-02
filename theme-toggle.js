@@ -21,6 +21,15 @@
     document.head.appendChild(link);
   }
 
+  /* Final presentation cleanup: remove duplicate labels without touching app logic. */
+  if(!document.querySelector('link[data-ui-cleanup]')){
+    const link=document.createElement('link');
+    link.rel='stylesheet';
+    link.href='/ui-cleanup.css';
+    link.dataset.uiCleanup='1';
+    document.head.appendChild(link);
+  }
+
   let meta=document.querySelector('meta[name="theme-color"]');
   if(!meta){meta=document.createElement('meta');meta.name='theme-color';document.head.appendChild(meta)}
 
