@@ -1,193 +1,145 @@
-/* Institutional colour refinement. Presentation only; no product logic. */
+/* Luxury institutional fintech colour system. Presentation only; hero intentionally preserved. */
 :root{
-  --bg:#f3f4f4;
-  --card:#ffffff;
-  --ink:#18232d;
-  --muted:#68737c;
-  --line:#d7dcdf;
+  --bg:#e4e7e9;
+  --card:#f2f4f5;
+  --ink:#1a232a;
+  --muted:#667079;
+  --line:#cbd1d5;
   --navy:#12283b;
   --navy2:#1c3a50;
-  --blue:#49697f;
-  --bluebg:#eef2f4;
-  --green:#4f715f;
-  --greenbg:#edf3ef;
-  --amber:#8a6a32;
-  --amberbg:#f6f1e6;
-  --red:#8f4d50;
-  --redbg:#f7eeee;
-  --shadow:0 14px 34px rgba(31,43,52,.055);
+  --blue:#4c6475;
+  --bluebg:#e4e8eb;
+  --green:#506b5b;
+  --greenbg:#e7ece8;
+  --amber:#816a3d;
+  --amberbg:#eee9dd;
+  --red:#8a4c50;
+  --redbg:#eee4e5;
+  --shadow:0 18px 42px rgba(26,34,40,.09);
   --shadow2:0 26px 64px rgba(20,34,46,.12);
 }
 
 body{
-  background:#f3f4f4;
+  background:
+    radial-gradient(circle at 12% 8%,rgba(255,255,255,.55),transparent 27%),
+    radial-gradient(circle at 88% 36%,rgba(255,255,255,.30),transparent 24%),
+    linear-gradient(180deg,#dfe3e6 0%,#eaedef 42%,#e2e5e7 100%);
   color:var(--ink);
 }
 
 .top{
-  background:rgba(250,250,249,.96);
-  border-bottom-color:#d9dddf;
+  background:rgba(236,239,241,.94);
+  border-bottom-color:#c9cfd3;
+  box-shadow:0 1px 0 rgba(255,255,255,.6),0 8px 24px rgba(28,35,41,.035);
 }
-.mark{
-  background:#142b3e;
-  box-shadow:0 7px 16px rgba(18,40,59,.16);
-}
-.status{
-  color:#486a58;
-  background:#eef3ef;
-  border-color:#d2dfd7;
-}
+.mark{background:#142b3e;box-shadow:0 7px 16px rgba(18,40,59,.16)}
+.status{color:#496456;background:#e5ebe7;border-color:#cbd6cf}
 
-/* Keep the dark navy hero and its circular pattern; remove the bright AI-blue feel. */
+/* Hero stays visually as approved: dark navy, circular pattern, same contrast. */
 .hero{
   background:
     radial-gradient(circle at 84% 8%,rgba(113,145,166,.18),transparent 31%),
     linear-gradient(135deg,#0e2234 0%,#153047 56%,#193b53 100%);
   box-shadow:0 26px 68px rgba(16,32,45,.18);
 }
-.hero:after{
-  border-color:rgba(225,236,243,.10);
-  box-shadow:0 0 0 55px rgba(225,236,243,.025),0 0 0 110px rgba(225,236,243,.018);
-}
-.heroKicker{color:#a8bdca}
-.hero h1 span{color:#c8d8e2}
-.hero p{color:#d8e1e7}
-.heroBadges span{
-  color:#e6edf1;
-  background:rgba(255,255,255,.055);
-  border-color:rgba(255,255,255,.14);
-}
-.heroVisual{
-  background:linear-gradient(180deg,rgba(255,255,255,.085),rgba(255,255,255,.045));
-  border-color:rgba(255,255,255,.13);
-}
+.hero:after{border-color:rgba(225,236,243,.10);box-shadow:0 0 0 55px rgba(225,236,243,.025),0 0 0 110px rgba(225,236,243,.018)}
+.heroKicker{color:#a8bdca}.hero h1 span{color:#c8d8e2}.hero p{color:#d8e1e7}
+.heroBadges span{color:#e6edf1;background:rgba(255,255,255,.055);border-color:rgba(255,255,255,.14)}
+.heroVisual{background:linear-gradient(180deg,rgba(255,255,255,.085),rgba(255,255,255,.045));border-color:rgba(255,255,255,.13)}
 .proofItem{background:rgba(255,255,255,.065);border-color:rgba(255,255,255,.13)}
 .proofItem.danger{background:rgba(143,77,80,.18);border-color:rgba(205,150,153,.28)}
-.proofVs{color:#d7b8b9}
-.heroOutcome{background:#f7f7f5}
-.heroOutcome strong{color:var(--red)}
+.proofVs{color:#d7b8b9}.heroOutcome{background:#f1f0ed}.heroOutcome strong{color:var(--red)}
 
+/* Graphite stage rail: no more large white bar. */
 .flow{
-  background:rgba(250,250,249,.94);
-  border-color:#d9dddf;
-  box-shadow:0 5px 14px rgba(30,39,46,.035);
+  background:linear-gradient(180deg,#2d343a,#252c31);
+  border-color:#30383e;
+  box-shadow:0 14px 32px rgba(24,30,35,.16),inset 0 1px 0 rgba(255,255,255,.055);
+  padding:8px;
+}
+.flow span{
+  color:#aeb7bd;
+  cursor:pointer;
+  user-select:none;
+  border:1px solid transparent;
+  transition:background .18s ease,color .18s ease,border-color .18s ease,transform .18s ease;
+}
+.flow span:hover,.flow span.viewing{
+  color:#f5f6f7;
+  background:#374047;
+  border-color:#465159;
 }
 .flow span.active{
-  color:#1d3749;
-  background:#eceff1;
-  box-shadow:inset 0 0 0 1px #d8dde0;
+  color:#152632;
+  background:#eef0f1;
+  border-color:#eef0f1;
+  box-shadow:0 5px 14px rgba(0,0,0,.16);
 }
-.flow span.done{
-  color:#4f715f;
-  background:#edf3ef;
-}
+.flow span.done{color:#d7e1da;background:#35433b;border-color:#425248}
+.flow span.locked{opacity:.74}
+.flow span.locked:hover{opacity:1}
+.flow span:not(:last-child):after{color:#73808a}
 
+/* Lower surfaces are smoke / silver, not pure white. */
 .card,.process{
-  background:#fff;
-  border-color:#d8dddf;
-  box-shadow:0 14px 32px rgba(31,43,52,.05);
+  background:rgba(242,244,245,.96);
+  border-color:#c8ced2;
+  box-shadow:0 16px 38px rgba(29,36,42,.08),inset 0 1px 0 rgba(255,255,255,.72);
 }
-.head{background:linear-gradient(180deg,#fff,#fbfbfa)}
-.kicker,.processKicker{color:#6f7f89}
+.head{
+  background:linear-gradient(180deg,#f1f3f4,#eceff0);
+  border-bottom-color:#ccd2d6;
+}
+.body,.scenarioCard .body,.decisionCard .body{background:#f3f4f4}
+.kicker,.processKicker{color:#6a7780}
 
-.btn.dark{
-  background:#163247;
-  border-color:#163247;
-  box-shadow:0 7px 16px rgba(18,40,59,.12);
-}
-.btn.soft{background:#eef0f1}
-.btn:hover{box-shadow:0 7px 16px rgba(31,43,52,.08)}
-.btn:focus-visible{outline-color:rgba(73,105,127,.20)}
+.btn{border-color:#c6ccd0;background:#e9ecee;color:#26343d}
+.btn.dark{background:#172e40;border-color:#172e40;box-shadow:0 8px 18px rgba(18,40,59,.14)}
+.btn.soft{background:#e2e5e7;border-color:#c8ced2}
+.btn:hover{box-shadow:0 8px 18px rgba(30,38,44,.10)}
+.btn:focus-visible{outline-color:rgba(69,91,106,.20)}
 
-.scenario textarea{background:#fafafa;border-color:#d5dade}
-.scenario textarea:focus{border-color:#8195a2;box-shadow:0 0 0 4px rgba(73,105,127,.08)}
-.parsed{background:#f7f8f8;border-color:#d7dde0}
-.fact{background:#fdfdfc}
-.fact.hot{background:#f7eeee;border-color:#e3cccc}
-.fact.hot b{color:#8f4d50}
-.unknown{background:#f0f2f2;color:#5f6b73}
-.tag{background:#edf3ef;color:#4f715f}
-.tag.fallback{background:#f6f1e6;color:#8a6a32}
+.scenario textarea{background:#e9ecee;border-color:#c7cdd1;color:#1d272f}
+.scenario textarea:focus{background:#eef0f1;border-color:#7e909b;box-shadow:0 0 0 4px rgba(70,91,104,.09)}
+.parsed{background:#e9ecee;border-color:#c7cfd3}
+.fact{background:#f4f5f5;border-color:#cbd1d4}
+.fact.hot{background:#eee4e5;border-color:#d9c2c4}.fact.hot b{color:#8a4c50}
+.unknown{background:#e3e6e8;color:#58636b}.tag{background:#e7ece8;color:#506b5b}.tag.fallback{background:#eee9dd;color:#816a3d}
 
-.progress>div,.miniBar>div{background:#4f6f83}
-.check.running,.mini.running,.sysStep.running{
-  border-color:#a8b7c0;
-  background:#f0f3f4;
-  color:#233b4b;
-  box-shadow:none;
-}
-.check.pass,.mini.pass,.sysStep.pass{border-color:#cad9cf;background:#edf3ef;color:#4f715f}
-.check.warn,.mini.warn,.sysStep.warn{border-color:#ddd1b4;background:#f6f1e6;color:#80642e}
-.check.fail{border-color:#dec5c7;background:#f7eeee}
+.progress{background:#d8dde0}.progress>div,.miniBar>div{background:#536b7b}
+.check,.mini,.sysStep{background:#e9ecee;border-color:#c8ced2}
+.check.running,.mini.running,.sysStep.running{border-color:#9baab3;background:#e2e6e8;color:#233742;box-shadow:none}
+.check.pass,.mini.pass,.sysStep.pass{border-color:#c5d0c8;background:#e7ece8;color:#506b5b}
+.check.warn,.mini.warn,.sysStep.warn{border-color:#d3c8ad;background:#eee9dd;color:#786137}
+.check.fail{border-color:#d7c0c2;background:#eee4e5}
 
-.decision{
-  border-color:#dec7c9;
-  border-left-color:#8f4d50;
-  background:linear-gradient(135deg,#faf5f5,#fff);
-}
-.decision:before{color:#a67b7d}
-.decision.amber{
-  border-color:#ddd3ba;
-  border-left-color:#8a6a32;
-  background:linear-gradient(135deg,#faf8f2,#fff);
-}
-.metric .bad{background:#f2e3e4;color:#8f4d50}
-.metric .op{color:#8f4d50}
-.principle{background:#f5f6f6}
-.principle.primary{
-  background:#183348;
-  border-color:#183348;
-  box-shadow:0 11px 22px rgba(18,40,59,.12);
-}
+.decision{border-color:#d6c1c3;border-left-color:#8a4c50;background:linear-gradient(135deg,#eee5e6,#f4f5f5)}
+.decision:before{color:#9e797b}
+.decision.amber{border-color:#d4cab3;border-left-color:#816a3d;background:linear-gradient(135deg,#eeeade,#f4f5f5)}
+.metric span{background:#e1e5e7}.metric .bad{background:#e8d9db;color:#8a4c50}.metric .op{color:#8a4c50}
+.principle{background:#e7eaec;border-color:#c8ced2}
+.principle.primary{background:#172e40;border-color:#172e40;box-shadow:0 12px 24px rgba(18,40,59,.14)}
 .principle.primary small{color:#b4c4ce}
-.systemicGate{background:#f7f4eb;border-color:#ddd0ad}
-.systemicGate b{color:#765e31}
-.systemicGate p{color:#665a42}
+.systemicGate{background:#ebe7dd;border-color:#d0c5a9}.systemicGate b{color:#6f5a32}.systemicGate p{color:#655a45}
 
-.why,.actionProcess{background:#f7f8f8;border-color:#d8dddf}
-.ai{background:#f5f7f7;border-color:#cdd6da;border-left-color:#34556b}
-.whyIcon{background:#eceff0;color:#445965}
+.why,.actionProcess{background:#e9ecee;border-color:#c8ced2}.ai{background:#e7eaeb;border-color:#c7ced2;border-left-color:#3b5667}.whyIcon{background:#dde2e5;color:#425661}
 
-.compare .before{
-  background:#faf6f6!important;
-  border-color:#e0cbcc!important;
-}
-.compare .after{
-  background:#f5f8f6!important;
-  border-color:#cedbd2!important;
-}
-.transitionNote{background:#f0f2f1!important;color:#4c5b63!important}
+.compare .before{background:#eee5e6!important;border-color:#d8c4c6!important}
+.compare .after{background:#e7ece8!important;border-color:#c6d1c9!important}
+.transitionNote{background:#e1e5e6!important;color:#49565e!important}
 
-.fabricMap{background:#f7f8f8;border-color:#d7dcdf}
-.institution{background:#fff;border-color:#d7dcdf}
-.institution span{background:#e9edef;color:#304654}
-.fabricConnector i{background:#8296a2}
-.fabricHub{
-  background:#183348;
-  border-color:#183348;
-  box-shadow:0 13px 28px rgba(18,40,59,.14);
-}
-.sysFact{background:#fafafa}
-.sysFact.pass{background:#edf3ef;border-color:#cad9cf}
-.sysFact.warn{background:#f6f1e6;border-color:#ddd1b4}
-.systemicResult{
-  background:#f8f5ed;
-  border-color:#ddd0ad;
-  border-left-color:#8a6a32;
-}
-.systemicResult:after{color:rgba(94,75,39,.045)}
-.reject{background:#eeefef;color:#4e5b62}
+.fabricMap{background:#e8ebed;border-color:#c7cdd1}.institution{background:#f1f3f4;border-color:#c8ced2}.institution span{background:#dce2e5;color:#304654}.fabricConnector i{background:#7d909b}
+.fabricHub{background:#172e40;border-color:#172e40;box-shadow:0 13px 28px rgba(18,40,59,.15)}
+.sysFact{background:#eceeef;border-color:#c8ced2}.sysFact.pass{background:#e7ece8;border-color:#c5d0c8}.sysFact.warn{background:#eee9dd;border-color:#d3c8ad}
+.systemicResult{background:#ebe7dd;border-color:#d0c5a9;border-left-color:#816a3d}.systemicResult:after{color:rgba(94,75,39,.045)}.reject{background:#dde1e3;color:#48555d}
 
-.evidenceUXCol{background:#f8f9f9!important}
-.evidenceUXCol.known{background:#edf3ef!important;border-color:#cad9cf!important}
-.evidenceUXCol.unknown{background:#f6f1e6!important;border-color:#ddd1b4!important}
-.evidenceUXCol.next{background:#f0f2f2!important;border-color:#d7dcdf!important}
+.evidenceUX,.evidenceUXCol,.evidenceCol{background:#e9ecee!important;border-color:#c7cdd1!important}
+.evidenceUXCol.known{background:#e7ece8!important;border-color:#c5d0c8!important}
+.evidenceUXCol.unknown{background:#eee9dd!important;border-color:#d3c8ad!important}
+.evidenceUXCol.next{background:#e0e4e6!important;border-color:#c9cfd2!important}
+.evidenceRule{background:#e9e5db!important;border-color:#d1c5aa!important}
 
-.closingPrinciple{
-  background:#172f43;
-  box-shadow:0 20px 48px rgba(18,40,59,.12);
-}
+.closingPrinciple{background:#172e40;box-shadow:0 20px 48px rgba(18,40,59,.14)}
+.footer{color:#626d75}
 
-@media(max-width:760px){
-  body{background:#f4f5f5}
-}
+@media(max-width:760px){body{background:linear-gradient(180deg,#e0e3e5,#e8eaec)}.flow{background:#252c31}}
