@@ -1,0 +1,56 @@
+/* Devpost / jury presentation micro-polish. Presentation layer only; no decision logic. */
+:root{--gallery-ring:0 0 0 1px rgba(13,45,82,.045),0 24px 60px rgba(20,47,80,.07)}
+
+/* Keep the core demo visually stable for 3:2 gallery captures and judge scans. */
+.hero,.decisionCard,.compareCard,.systemicCard{isolation:isolate}
+.hero{min-height:520px;align-items:center}
+.heroCopy{padding-right:4px}
+.heroVisual{min-height:370px;display:flex;flex-direction:column;justify-content:center}
+.heroOutcome{box-shadow:0 12px 30px rgba(3,20,38,.16)}
+
+/* Make the workflow easier to scan in one glance. */
+.flow{position:sticky;top:78px;z-index:12;backdrop-filter:blur(12px)}
+.flow span{display:inline-flex;align-items:center;min-height:34px}
+
+/* Stronger visual hierarchy on the three screenshot-worthy states. */
+.decisionCard,.compareCard,.systemicCard{box-shadow:var(--gallery-ring)}
+.decisionLayout{align-items:stretch}
+.decision{min-height:280px;display:flex;flex-direction:column;justify-content:center}
+.decisionPrinciples{height:100%}
+.principle{flex:1;display:flex;flex-direction:column;justify-content:center}
+
+.compare{align-items:stretch}
+.compare .box{min-height:160px;display:flex;flex-direction:column;justify-content:center}
+.compare .before{background:linear-gradient(145deg,#fff5f6,#fff);border-color:#efc7ca}
+.compare .after{background:linear-gradient(145deg,#f1f9f5,#fff);border-color:#c7e1d4}
+.transitionNote{font-weight:850}
+
+.fabricMap{position:relative;overflow:hidden}
+.fabricMap:after{content:"";position:absolute;inset:auto -90px -120px auto;width:260px;height:260px;border-radius:50%;border:1px solid rgba(31,111,229,.10);box-shadow:0 0 0 42px rgba(31,111,229,.035),0 0 0 84px rgba(31,111,229,.02);pointer-events:none}
+.fabricHub{position:relative;z-index:1;box-shadow:0 14px 32px rgba(31,111,229,.12)}
+.systemicResult{position:relative;overflow:hidden}
+.systemicResult:after{content:"S7";position:absolute;right:18px;top:10px;font-size:62px;font-weight:950;letter-spacing:-.08em;color:rgba(154,103,0,.055);pointer-events:none}
+.reject{font-size:11px}
+
+/* Better readability for live screenshots. */
+.head h2{max-width:840px}
+.head p{max-width:820px}
+.fact b,.sysFact b{letter-spacing:-.015em}
+.closingPrinciple{box-shadow:var(--gallery-ring)}
+
+/* Avoid awkward motion or hover effects during screen capture. */
+@media (prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}}
+
+@media (min-width:1180px){
+  .wrap{max-width:1180px}
+  .hero{padding:52px 54px}
+  .hero h1{font-size:49px}
+  .systemicGrid{grid-template-columns:repeat(4,minmax(0,1fr))}
+}
+
+@media (max-width:900px){
+  .flow{position:static}
+  .hero{min-height:auto}
+  .heroVisual{min-height:auto}
+  .decision{min-height:auto}
+}
