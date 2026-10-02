@@ -11,3 +11,34 @@ jobs:
         with:
           node-version: 20
       - run: npm run validate
+
+  production-smoke:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: validate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for Vercel and prove live Apertus parse
+        shell: bash
+        run: |
+          set -u
+          url="https://systemic-resilience-copilot.vercel.app/api/apertus/smoke"
+          for i in $(seq 1 24); do
+            code=$(curl -sS --max-time 80 -o smoke.json -w "%{http_code}" "$url" || true)
+            echo "attempt=$i http=$code"
+            cat smoke.json 2>/dev/null || true
+            echo
+            if [ "$code" = "200" ] && node -e '
+              const fs=require("fs");
+              const x=JSON.parse(fs.readFileSync("smoke.json","utf8"));
+              const c=x.checks||{};
+              const d=x.deterministic_expected||{};
+              const pass=x.ok===true && x.mode==="live" && c.critical_workload && c.impact_tolerance_minutes===60 && c.failure_domain_known==="YES" && c.recovery_route_outside_failure_domain==="YES" && c.same_workload_supported==="YES" && c.execution_tested==="YES" && c.observed_recovery_minutes===95 && c.simultaneous_demand_evidence_state==="UNKNOWN" && c.capacity_state==="UNKNOWN" && d.stage==="S5" && d.state==="RED" && d.binding==="B2" && d.action==="REPAIR_EXECUTION" && x.secret_exposed===false;
+              if(!pass) process.exit(1);
+            '; then
+              echo "PASS: production live Apertus parse -> 60/95 -> S5 RED/B2"
+              exit 0
+            fi
+            sleep 10
+          done
+          echo "FAIL: production smoke did not reach canonical live parse state"
+          exit 1
