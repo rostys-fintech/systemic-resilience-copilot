@@ -1,0 +1,9 @@
+scene,start,end,duration,visual,primary_action,overlay
+1_hook,00:00,00:10,10s,Hero with 95 vs 60 proof,Slow 4% push,"Backup exists ≠ executable recovery"
+2_product,00:10,00:24,14s,Flow rail + scenario card,Scroll once and hold,"Apertus structures. Rules decide."
+3_parse,00:24,00:51,27s,Scenario + Apertus parse + validated facts,Click Structure with Apertus & analyse,"Apertus structures the evidence"
+4_decision,00:51,01:12,21s,Decision card 95 > 60 + S5 RED B2,Hold proof and action,"95 min > 60 min → S5 RED · B2"
+5_explain,01:12,01:29,17s,Why section + explanation cards,Click Why?,"AI explains. Rules decide."
+6_fix,01:29,01:50,21s,Apply fix + before after,Click Apply the fix,"95 → 45 → next state becomes UNKNOWN"
+7_systemic,01:50,02:13,23s,Systemic lens + S7 UNKNOWN,Click Open systemic lens,"Shared recovery resource ≠ proven shortage"
+8_close,02:13,02:24,11s,Branded closing frame,No clicks,"Evidence → Decision → Action"
