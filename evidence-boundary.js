@@ -69,4 +69,43 @@
     $('evidenceUXSystemic')?.classList.add('hidden');
     for(let i=1;i<=4;i++){const e=$('sys'+i);if(e)e.className='sysStep'}
   });
+
+  /* Clickable stage navigation. It never reveals a hidden downstream state; it only navigates to stages the demo has actually reached. */
+  const flow=document.getElementById('flow');
+  const flowSteps=flow?[...flow.querySelectorAll('span')]:[];
+  const targets=['scenarioCard','parseProcess','rulesProcess','decisionCard','whyCard','systemicCard'];
+  const targetFor=(index)=>$(targets[index]);
+  const visible=el=>Boolean(el&&!el.classList.contains('hidden'));
+  const latestVisibleBefore=index=>{
+    for(let i=index;i>=0;i--){const el=targetFor(i);if(visible(el))return el}
+    return $('scenarioCard');
+  };
+  const syncFlowNav=()=>{
+    flowSteps.forEach((step,index)=>{
+      const unlocked=visible(targetFor(index));
+      step.classList.toggle('locked',!unlocked);
+      step.setAttribute('aria-disabled',unlocked?'false':'true');
+      step.title=unlocked?'Go to this stage':'Complete the previous stage first';
+    });
+  };
+  const navigate=(step,index)=>{
+    if(document.body.classList.contains('interactionLocked'))return;
+    const target=visible(targetFor(index))?targetFor(index):latestVisibleBefore(index);
+    if(!target)return;
+    flowSteps.forEach(x=>x.classList.remove('viewing'));
+    step.classList.add('viewing');
+    target.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
+  };
+  flowSteps.forEach((step,index)=>{
+    step.setAttribute('role','button');
+    step.setAttribute('tabindex','0');
+    step.dataset.navTarget=targets[index];
+    step.addEventListener('click',()=>navigate(step,index));
+    step.addEventListener('keydown',e=>{
+      if(e.key==='Enter'||e.key===' '){e.preventDefault();navigate(step,index)}
+    });
+  });
+  const flowObserver=new MutationObserver(syncFlowNav);
+  ['parseProcess','rulesProcess','decisionCard','whyCard','systemicCard'].forEach(id=>{const el=$(id);if(el)flowObserver.observe(el,{attributes:true,attributeFilter:['class']})});
+  syncFlowNav();
 })();
