@@ -1,9 +1,9 @@
-scene,start,end,duration,visual,primary_action,overlay
-1_hook,00:00,00:10,10s,Hero with 95 vs 60 proof,Slow 4% push,"Backup exists ≠ executable recovery"
-2_product,00:10,00:24,14s,Flow rail + scenario card,Scroll once and hold,"Apertus structures. Rules decide."
-3_parse,00:24,00:51,27s,Scenario + Apertus parse + validated facts,Click Structure with Apertus & analyse,"Apertus structures the evidence"
-4_decision,00:51,01:12,21s,Decision card 95 > 60 + S5 RED B2,Hold proof and action,"95 min > 60 min → S5 RED · B2"
-5_explain,01:12,01:29,17s,Why section + explanation cards,Click Why?,"AI explains. Rules decide."
-6_fix,01:29,01:50,21s,Apply fix + before after,Click Apply the fix,"95 → 45 → next state becomes UNKNOWN"
-7_systemic,01:50,02:13,23s,Systemic lens + S7 UNKNOWN,Click Open systemic lens,"Shared recovery resource ≠ proven shortage"
-8_close,02:13,02:24,11s,Branded closing frame,No clicks,"Evidence → Decision → Action"
+scene,start,end,duration,visual,primary_action,major_overlay,transition_in,camera_motion,sound_note
+1_hook,00:00,00:10,10s,Dark navy hero with 95 vs 60 proof,No click,"Backup exists ≠ executable recovery",Fade up from black 8f,"Slow 4% push to 95 > 60","Ambient bed optional; no UI click"
+2_product,00:10,00:24,14s,Flow rail plus scenario card,One deliberate scroll,,Straight cut on narration beat,"Static hold then gentle 2% pan across Scenario → Apertus → Rules → Decision","No transition SFX"
+3_parse,00:24,00:51,27s,Scenario + real Apertus parse + validated facts,Click Structure with Apertus & analyse,,Match cut on button click,"3% push during parse; settle on 60 min and 95 min","One soft click only; trim dead wait"
+4_decision,00:51,01:12,21s,Decision card + 95 > 60 + S5 RED B2,No new click,"95 min > 60 min → S5 RED · B2",Hard clean cut when rule process completes,"4–5% push to metric then settle on state/action","Duck music 4–6 dB; no whoosh"
+5_explain,01:12,01:29,17s,Why section + three explanation cards,Click Why?,"AI explains. Rules decide.",Match cut on Why click,"Slow 3% push to explanation cards; avoid dense review text","One soft click; no extra SFX"
+6_fix,01:29,01:50,21s,Apply fix + before/after + S6 UNKNOWN,Click Apply the fix,"95 → 45 → S6 UNKNOWN",Straight cut from explanation back to action,"Track focus from 95 to 45 then to S6 UNKNOWN","One soft click; slight music lift only after S6 appears"
+7_systemic,01:50,02:15,25s,Systemic lens + 3 institutions + S7 UNKNOWN,Click Open systemic lens,"Shared recovery resource ≠ proven shortage",Match cut on Open systemic lens,"Gentle pan from institutions to ResilienceGrid then 4% push to S7 UNKNOWN","One soft click; music stays restrained"
+8_close,02:15,02:24,9s,Branded hero-derived closing frame,No clicks,"Evidence → Decision → Action",10f dissolve from systemic result,"Static frame with max 2% slow push","Fade ambient bed under final sentence; 8–12f fade to black"
