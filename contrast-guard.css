@@ -1,0 +1,151 @@
+/* Global contrast guard.
+   Rule: dark text on light surfaces; light text on dark surfaces.
+   Presentation only — no product logic changes. */
+
+/* ---------- LIGHT THEME ---------- */
+html[data-theme="light"]{
+  --cg-dark:#18212a;
+  --cg-dark-2:#25313b;
+  --cg-muted:#59636c;
+  --cg-light:#f6f2ec;
+  --cg-light-2:#dfe6ec;
+}
+
+/* Light surfaces: force readable dark text across expanded/dynamic states. */
+html[data-theme="light"] :is(
+  .top,.card,.process,.head,.body,.scenario,.parsed,.fact,.why,.actionProcess,
+  .principle:not(.primary),.fabricMap,.institution,.systemicResult,.systemicGate,
+  .evidenceCol,.evidenceRule,#evidenceBoundaryCard,.compare .box,.transitionNote,
+  .check,.mini,.sysStep,.sysFact,.ai,details,.scenario textarea
+){color:var(--cg-dark)!important}
+
+html[data-theme="light"] :is(
+  .top,.card,.process,.head,.body,.scenario,.parsed,.fact,.why,.actionProcess,
+  .principle:not(.primary),.fabricMap,.institution,.systemicResult,.systemicGate,
+  .evidenceCol,.evidenceRule,#evidenceBoundaryCard,.compare .box,.transitionNote,
+  .check,.mini,.sysStep,.sysFact,.ai,details
+) :is(h1,h2,h3,h4,p,b,strong,small,label,li,summary,.eyebrow,.metric,.next,.meta,.n,.actionHead,.processTop,.parsedTop,.stateLabel){
+  color:var(--cg-dark)!important;
+}
+
+html[data-theme="light"] :is(
+  .head p,.helper,.fact label,.check small,.mini,.sysStep,.meta,.processKicker,.kicker,
+  .institution small,.systemicResult p,.evidenceCol li,.evidenceRule p,.ai p
+){color:var(--cg-muted)!important}
+
+html[data-theme="light"] .scenario textarea,
+html[data-theme="light"] .scenario textarea::placeholder{color:var(--cg-dark)!important}
+
+/* Light status surfaces still keep status meaning, but main copy stays dark. */
+html[data-theme="light"] :is(.check.pass,.mini.pass,.sysStep.pass,.sysFact.pass,.compare .after) :is(b,strong,p,small,span,div,label){color:#244438!important}
+html[data-theme="light"] :is(.check.warn,.mini.warn,.sysStep.warn,.sysFact.warn,.decision.amber,.systemicGate,.systemicResult) :is(b,strong,p,small,span,div,label){color:#5a4522!important}
+html[data-theme="light"] :is(.decision,.compare .before) :is(h3,b,strong,p,small,span,div,label){color:#532f32!important}
+
+/* Dark surfaces inside the light theme. */
+html[data-theme="light"] :is(.hero,.flow,.principle.primary,.fabricHub,.closingPrinciple,.btn.dark,.mark){color:var(--cg-light)!important}
+html[data-theme="light"] :is(.hero,.principle.primary,.fabricHub,.closingPrinciple,.btn.dark,.mark) :is(h1,h2,h3,h4,p,b,strong,small,label,span,li,div){color:var(--cg-light)!important}
+html[data-theme="light"] .hero h1 span{color:#d6b18a!important}
+html[data-theme="light"] .heroKicker{color:#c6aa8c!important}
+html[data-theme="light"] .heroVisualTop span{color:#d8c7b6!important}
+html[data-theme="light"] .heroVisualTop b,
+html[data-theme="light"] .heroQuestion,
+html[data-theme="light"] .proofItem strong,
+html[data-theme="light"] .proofItem span{color:var(--cg-light)!important}
+
+/* Light cards nested inside dark hero must switch back to dark text. */
+html[data-theme="light"] .heroOutcome,
+html[data-theme="light"] .heroOutcome :is(span,strong,small){color:var(--cg-dark)!important}
+html[data-theme="light"] .heroOutcome strong{color:#7f3e42!important}
+html[data-theme="light"] .hero .btn,
+html[data-theme="light"] .heroBtn{color:#171b1f!important}
+
+/* Step rail contrast. */
+html[data-theme="light"] .flow span{color:#d4d0cb!important}
+html[data-theme="light"] .flow span:hover,
+html[data-theme="light"] .flow span.viewing{color:#fffaf4!important}
+html[data-theme="light"] .flow span.active{color:#172029!important}
+html[data-theme="light"] .flow span.done{color:#edf5f0!important}
+
+/* Theme toggle contrast. */
+html[data-theme="light"] .themeBtn{color:#312d29!important}
+html[data-theme="light"] .themeBtn[aria-pressed="true"]{color:#fff8ef!important}
+
+/* Buttons on light surfaces. */
+html[data-theme="light"] .btn:not(.dark):not(.heroBtn){color:#1c252d!important}
+
+/* ---------- DARK THEME ---------- */
+html[data-theme="dark"]{
+  --cg-light:#eef3f7;
+  --cg-light-2:#c8d2db;
+  --cg-dim:#a8b4bf;
+  --cg-dark:#111923;
+}
+
+/* Dark surfaces: force readable light text across every revealed stage. */
+html[data-theme="dark"] :is(
+  body,.top,.card,.process,.head,.body,.scenario,.parsed,.fact,.why,.actionProcess,
+  .principle,.fabricMap,.institution,.systemicResult,.systemicGate,.evidenceCol,
+  .evidenceRule,#evidenceBoundaryCard,.compare .box,.transitionNote,.check,.mini,
+  .sysStep,.sysFact,.ai,details,.flow
+){color:var(--cg-light)!important}
+
+html[data-theme="dark"] :is(
+  .top,.card,.process,.head,.body,.scenario,.parsed,.fact,.why,.actionProcess,
+  .principle,.fabricMap,.institution,.systemicResult,.systemicGate,.evidenceCol,
+  .evidenceRule,#evidenceBoundaryCard,.compare .box,.transitionNote,.check,.mini,
+  .sysStep,.sysFact,.ai,details
+) :is(h1,h2,h3,h4,p,b,strong,small,label,li,summary,.eyebrow,.metric,.next,.meta,.n,.actionHead,.processTop,.parsedTop,.stateLabel){
+  color:var(--cg-light)!important;
+}
+
+html[data-theme="dark"] :is(
+  .head p,.helper,.fact label,.check small,.meta,.processKicker,.kicker,.institution small,
+  .systemicResult p,.evidenceCol li,.evidenceRule p,.ai p
+){color:var(--cg-dim)!important}
+
+html[data-theme="dark"] .scenario textarea,
+html[data-theme="dark"] .scenario textarea::placeholder{color:var(--cg-light)!important}
+
+/* Dark-theme status cards may be tinted, but text remains bright enough. */
+html[data-theme="dark"] :is(.check.pass,.mini.pass,.sysStep.pass,.sysFact.pass,.compare .after) :is(b,strong,p,small,span,div,label){color:#d8eee4!important}
+html[data-theme="dark"] :is(.check.warn,.mini.warn,.sysStep.warn,.sysFact.warn,.decision.amber,.systemicGate,.systemicResult) :is(b,strong,p,small,span,div,label){color:#f0dfbd!important}
+html[data-theme="dark"] :is(.decision,.compare .before) :is(h3,b,strong,p,small,span,div,label){color:#f3d9db!important}
+
+/* Hero + principal dark areas. */
+html[data-theme="dark"] :is(.hero,.flow,.principle.primary,.fabricHub,.closingPrinciple,.btn.dark,.mark),
+html[data-theme="dark"] :is(.hero,.principle.primary,.fabricHub,.closingPrinciple,.btn.dark,.mark) :is(h1,h2,h3,h4,p,b,strong,small,label,span,li,div){
+  color:var(--cg-light)!important;
+}
+
+/* If a light chip/card exists inside dark theme, flip its text dark. */
+html[data-theme="dark"] :is(.heroOutcome,.themeBtn[aria-pressed="true"]){color:var(--cg-dark)!important}
+html[data-theme="dark"] .heroOutcome :is(span,strong,small){color:var(--cg-dark)!important}
+
+/* Step rail + theme switch. */
+html[data-theme="dark"] .flow span{color:#bdc7cf!important}
+html[data-theme="dark"] .flow span:hover,
+html[data-theme="dark"] .flow span.viewing,
+html[data-theme="dark"] .flow span.done{color:#f5f8fa!important}
+html[data-theme="dark"] .flow span.active{color:#111923!important}
+html[data-theme="dark"] .themeBtn{color:#cbd5de!important}
+html[data-theme="dark"] .themeBtn[aria-pressed="true"]{color:#111923!important}
+
+/* Links / interactive text inherit the local surface contrast. */
+html[data-theme="light"] :is(.card,.process,#evidenceBoundaryCard) a{color:#274d68!important}
+html[data-theme="dark"] :is(.card,.process,#evidenceBoundaryCard) a{color:#9cc7e8!important}
+
+/* Technical trace: each state must remain readable when expanded. */
+html[data-theme="light"] .trace .stage{color:#1b242c!important}
+html[data-theme="dark"] .trace .stage{color:#f0f4f7!important}
+html[data-theme="light"] .trace .stage.g{color:#28493c!important}
+html[data-theme="dark"] .trace .stage.g{color:#d6ece2!important}
+html[data-theme="light"] .trace .stage.a{color:#604a24!important}
+html[data-theme="dark"] .trace .stage.a{color:#f1ddb4!important}
+html[data-theme="light"] .trace .stage.r{color:#5f3235!important}
+html[data-theme="dark"] .trace .stage.r{color:#f0d3d5!important}
+
+/* Mobile keeps the same contrast guarantees. */
+@media(max-width:760px){
+  html[data-theme="light"] .flow span{color:#d7d2cc!important}
+  html[data-theme="dark"] .flow span{color:#c5cfd7!important}
+}
