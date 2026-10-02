@@ -1,110 +1,97 @@
 # Systemic Resilience Copilot — Hostile Video Audit
 
-**Audit status:** WEAK-PASS / polish required before final submission
+**Audit status:** PASS — FINAL V3 RELEASE GATE
 
-## Audited render
+Date: 2026-10-02
 
-- `Systemic_Resilience_Copilot_Demo_CAPTIONS.mp4`
-- measured duration: **146.267 s (2:26.3)**
-- measured video: **1280×720**, H.264, 30 fps
-- measured video bitrate: ~**1.92 Mbps**
-- measured audio: AAC, **48 kHz mono**, ~167 kbps
-- burned captions use the current 2:26 timing, not the obsolete 2:43 draft timing
+## Audited release
 
-## What survives hostile review
+Final Descript project:
+- Project: `Systemic Resilience Copilot — FINAL V3 FILM`
+- Composition: `FINAL V3 FILM`
+- Composition ID: `c3c5d223-4c8d-4427-8f29-928f664d6290`
+- Published share: `https://share.descript.com/view/1O7fVkKJEW2`
+- Composition duration: **128.4 s (2:08.4)**
 
-### 1. The product story is understandable
-The sequence is visible and coherent:
+Descript project inspection confirms the final sequence contains:
+- `V3_VISUAL_MASTER.mp4` — video, **128.166666 s**;
+- `V3_NARRATION_MASTER.m4a` — audio, **128.4 s**;
+- `Sequences/FINAL_SEQUENCE` — **128.4 s**;
+- final composition media type: **video**.
 
-`scenario → Apertus structure → deterministic decision → S5 RED / B2 → Apertus review → fix to 45 min → S6 UNKNOWN → systemic lens → S7 UNKNOWN → close`
+The final composition was republished successfully as **1080p / unlisted** after this audit.
 
-The judge can understand the product without reading the repository.
+## Technical visual QC
 
-### 2. The key numerical proof is visible
-The film clearly shows **95 min recovery > 60 min tolerance**, then the repaired **45 min** state.
+The visual master was independently inspected from the rendered MP4:
+- resolution: **1920×1080**;
+- frame rate: **30 fps**;
+- codec: H.264;
+- measured visual-source duration: **128.166667 s**.
 
-### 3. AI and hard rules remain separated
-The film preserves the product contract:
+The visual-source file is intentionally video-only. Narration is combined in the final Descript sequence, not in the visual-source asset itself.
 
-- Apertus structures / reviews / explains;
-- deterministic rules decide;
-- the first binding or unresolved condition stops the chain.
+Representative frames were checked across the film, including the opening, evidence extraction, decision, explanation, intervention, systemic result and closing frame.
 
-The line **“AI explains. Rules decide.”** is visually and narratively reinforced.
+## Human audio gate
 
-### 4. The systemic lens is scientifically safe
-The shared-recovery example ends at **S7 UNKNOWN** because assured capacity / rights / coordination are not established. It does **not** infer a B3 shortage from shared exposure alone.
+The author listened to the final clean Descript narration and explicitly confirmed that it sounds normal.
 
-### 5. Public-safe boundary is preserved
-No private R2 data, unpublished manuscript text, real-bank confidential evidence, provider-danger score, systemic-event probability, or realized-crisis claim appears in the walkthrough.
+Therefore:
+- narration naturalness: **PASS**;
+- pronunciation / state-code intelligibility: **PASS by author listening**;
+- no time-stretched narration is used in the final film.
 
-### 6. Ending is strong
-The final message — **“when the evidence stops, the inference stops”** — accurately summarizes the product discipline and is suitable as the closing frame.
+## Hostile judge checks
 
-## Hostile judge attacks that still land
+### H1 — Can the judge understand the problem immediately?
+**PASS.** The opening frames establish the core problem before theory: backup existence does not establish executable recovery inside tolerance.
 
-### H1 — “You called this a 1080p master, but it is 720p.”
-**Valid attack.** The current file is 1280×720, not 1920×1080. Do not label the existing render as 1080p.
+### H2 — Is the main proof legible?
+**PASS.** The film visibly lands on:
+- `95 min > 60 min`;
+- `S5 RED · B2`;
+- `REPAIR EXECUTION`.
 
-**Required fix:** export a true 1920×1080 final render.
+### H3 — Is AI separated from the decision rule?
+**PASS.** The film preserves the product contract:
+- Apertus structures / challenges / explains;
+- deterministic rules set the state;
+- `UNKNOWN` is preserved rather than filled by inference.
 
-### H2 — “The UI text is too small on a laptop or phone.”
-**Partly valid.** Full-page shots are clean, but several secondary labels and evidence fields become small at 720p.
+### H4 — Does the intervention create a fake all-clear?
+**PASS.** The repaired case moves from **95 min to 45 min**, then exposes **S6 UNKNOWN** rather than declaring full resilience.
 
-**Required fix:** true 1080p export plus tighter crops / larger callout zooms around the 95-vs-60 decision, Apertus review, S6, and S7 states.
+### H5 — Is the systemic claim scientifically safe?
+**PASS.** The systemic scene ends at **S7 UNKNOWN** because assured capacity / priority / coordination are not established. The film does not infer a B3 shortage from shared recovery exposure alone.
 
-### H3 — “Is this actually a live recording?”
-**Valid if described carelessly.** The video is a reconstructed product walkthrough built from the current production UI states; it is **not** a continuous browser screen recording.
+### H6 — Are captions and overlays readable?
+**PASS.** Sampled 1080p frames show readable burned-in captions and the locked proof overlays. No obsolete top-right Apertus status badge appears in the checked frames.
 
-The product itself may be live, and the UI may display `Apertus live`, but this rendered film alone is not proof that each shown transition was generated live during recording.
+### H7 — Is the final frame clean?
+**PASS.** The closing frame presents:
+- `Systemic Resilience Copilot`;
+- `Evidence → Decision → Action`;
+- the evidence-discipline close.
 
-**Submission wording:** call it a **product demo / walkthrough**, not a `live recording` or `unedited live demo`.
-
-### H4 — “The first 20–30 seconds are visually static.”
-**Moderate attack.** The opening is clear but visually conservative. It does not damage comprehension, but the product proof becomes stronger once the extracted evidence appears.
-
-**Optional polish:** accelerate the first transition by ~2–4 seconds or introduce a slightly stronger push-in on the scenario / extraction handoff.
-
-### H5 — “Can I read the captions comfortably?”
-**Mostly pass.** Captions are visible in sampled frames and do not appear clipped, but they are relatively close to the bottom and compete with small UI text in some wide shots.
-
-**Required polish for final master:** increase caption size slightly and preserve a larger bottom safe margin.
-
-### H6 — “Does the video prove the live Apertus golden-path extraction?”
-**No.** It demonstrates the intended product logic, not an unedited live API proof. The separate live app remains the correct place for judges to test the runtime.
-
-This matters because the prior live-proof gate still needs a clean post-parser-hardening re-proof of the golden Case B if we want a formal `LIVE APERTUS PROOF = PASS` claim.
+### H8 — Any private / reviewer-sensitive material visible?
+**PASS.** No private R2 dataset, unpublished manuscript text, tokens, credentials, private tabs, raw API secrets, or reviewer-sensitive materials appear in the checked visual master.
 
 ## Submission truth boundary
 
-Safe phrases:
+Use:
+- `product demo`;
+- `public-safe edited product walkthrough`;
+- `live app available separately`.
 
-- `Product demo`
-- `Public-safe product walkthrough`
-- `Demo built from the current production UI`
-- `Live app available separately`
+Do not describe the film as:
+- an unedited continuous live browser recording;
+- proof that every shown Apertus response was generated live during recording.
 
-Avoid unless separately proven:
+## Final release decision
 
-- `Unedited live demo`
-- `Continuous live browser recording`
-- `This video proves every Apertus response was generated live`
-- `1080p master` for the current 1280×720 file
+**PASS FOR YOUTUBE / DEVPOST VIDEO USE.**
 
-## Release decision
+No scientific or product-logic changes are required before upload.
 
-**Current video:** usable as an internal / fallback demo, but **not the final submission master yet**.
-
-### Must-fix before final release
-1. Render true **1920×1080**.
-2. Increase readability with tighter zooms on the four proof beats: `95 > 60`, `S5 RED · B2`, `S6 UNKNOWN`, `S7 UNKNOWN`.
-3. Enlarge / raise burned captions slightly.
-4. Keep product-demo wording honest: reconstructed walkthrough, not continuous live capture.
-
-### Does not need changing
-- science;
-- decision rules;
-- Case B outcome;
-- Case C / systemic lens logic;
-- narration thesis;
-- final evidence-discipline message.
+Next stage: upload the final V3 film to YouTube as **Unlisted**, then place the YouTube watch URL in Devpost.
