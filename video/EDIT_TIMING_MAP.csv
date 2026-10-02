@@ -1,0 +1,8 @@
+clip,start,end,duration,proof
+01_hero_product,00:00.0,00:28.0,28.0,Problem + product architecture
+02_apertus_parse,00:28.0,00:56.0,28.0,Live Apertus extraction + 60/95 + UNKNOWN
+03_decision,00:56.0,01:16.0,20.0,S5 RED / B2 + repair execution
+04_apertus_review,01:16.0,01:34.0,18.0,Live Apertus challenge/explanation
+05_fix_rerun,01:34.0,01:52.0,18.0,45 min + S6 UNKNOWN
+06_systemic_lens,01:52.0,02:16.0,24.0,S7 UNKNOWN + no B3 shortage inference
+07_close,02:16.0,02:26.3,10.3,Evidence → Decision → Action
