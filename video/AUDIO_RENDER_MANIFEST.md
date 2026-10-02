@@ -1,50 +1,66 @@
-# Systemic Resilience Copilot — Audio Render Manifest
+# Systemic Resilience Copilot — Audio Render Manifest V3
 
-**Status:** RENDERED
+**Status:** OLD AUDIO SUPERSEDED — FINAL V3 VOICE NOT YET RENDERED
 
-## Master voice render
+## Legacy render
 
-- Engine/provider: HeyGen speech synthesis
+The earlier HeyGen render used an older SSML/script and lasted **146.286 seconds (2:26.3)**. It is retained only as archive/fallback material and is **not** the final audio authority.
+
+Legacy engine/provider:
+- HeyGen speech synthesis
 - Voice: Sebastian
 - Voice ID: `2da5a319054c4dc5803e852d574ccbf8`
 - Locale: `en-US`
-- Input: `video/VOICEOVER_SSML.txt`
-- SSML: enabled
-- Speed: `0.72`
-- Rendered duration: **146.286 seconds (2:26.3)**
-- Output format: WAV
+- Output: WAV
 
-## Quality direction preserved
+## Final V3 render authority
 
-The render uses the locked voice-over text and SSML pauses/emphasis from the repository. The target is calm, confident, technical, non-theatrical delivery with clear separation of `S five`, `B two`, `S six`, and `S seven UNKNOWN`.
+Render from:
+- `video/VOICEOVER_MASTER.md`
+- `video/VOICEOVER_SSML.txt`
 
-## Timing decision
+Both now contain the same spoken wording.
 
-The generated master is about 9–16 seconds shorter than the earlier 2:35–2:45 target. Do **not** time-stretch the voice merely to hit the old duration. The edit should instead use the real **2:26.3** narration as the timing authority and allow short visual holds before/after important beats if needed. A final video around **2:28–2:35** is acceptable if the product proof remains clear.
+Target film timing:
+- final edit: **2:24**
+- average editorial pace: ~120–130 wpm
+- slower holds on proof states
 
-## Required listening check before edit lock
+## Voice direction
 
-Verify these pronunciations in the rendered audio:
+- male;
+- confident and natural;
+- medium-low pitch;
+- international English;
+- calm, technical, non-theatrical;
+- no trailer cadence;
+- pronounce Apertus as `uh-PER-tus`;
+- keep `S five red, B two`, `S six UNKNOWN`, and `S seven UNKNOWN` clearly separated.
 
-- Apertus → `uh-PER-tus`
-- `ninety-five minutes`
-- `sixty-minute recovery tolerance`
-- `B two, at S five`
-- `AI explains. Rules decide.`
-- `S six`
-- `S seven UNKNOWN`
-- `the tool refuses to invent a shortage`
+## Mandatory listening check
 
-If any of those are materially wrong, regenerate only the affected line/section rather than changing the scientific wording.
+Before the screen edit is locked, verify the final V3 render correctly says:
+- `sixty-minute tolerance`;
+- `ninety-five minutes`;
+- `S five red, B two`;
+- `AI explains. Rules decide.`;
+- `forty-five minutes`;
+- `S six UNKNOWN`;
+- `S seven UNKNOWN`;
+- `not proof of a shortage`;
+- `When the evidence stops, the inference stops.`
 
-## Next production stage
+## Timing rule
 
-Record the seven clean product-screen clips against this actual audio timing:
+Do not time-stretch the voice.
 
-1. hero / product flow;
-2. Apertus parse;
-3. S5 RED / B2 decision;
-4. Apertus Why / challenge;
-5. Apply fix / S6 UNKNOWN;
-6. Systemic lens / S7 UNKNOWN;
-7. closing frame.
+After V3 narration is rendered:
+1. measure its real waveform duration;
+2. preserve the spoken wording;
+3. make only small visual/caption retiming adjustments if the real take differs from 2:24;
+4. update this manifest with the final provider, voice, speed and exact duration;
+5. only then lock final export.
+
+## Next production step
+
+Generate the V3 narration from the synchronized SSML, then capture/edit the seven product clips against that real audio master.
