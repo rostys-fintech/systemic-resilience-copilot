@@ -1,52 +1,46 @@
 # Systemic Resilience Copilot — Audio Render Manifest V3
 
-**Status:** BLOCKED AT PROVIDER CREDIT GATE — SCRIPT / SSML READY
+**Status:** DESCRIPT V3 MASTER RENDERED — LISTENING QC REQUIRED
 
 ## Final V3 render authority
 
-Render from:
+Source wording:
 - `video/VOICEOVER_MASTER.md`
 - `video/VOICEOVER_SSML.txt`
+- `video/DESCRIPT_V3_VOICE_BRIEF.md`
 
-These files now contain the synchronized final spoken wording for the judge-first V3 film.
+These files contain the synchronized final spoken wording for the judge-first V3 film.
 
-## Locked voice configuration
+## Final rendered master
 
-- Provider: HeyGen speech synthesis
-- Voice: Sebastian
-- Voice ID: `2da5a319054c4dc5803e852d574ccbf8`
-- Locale: `en-US`
-- Input: SSML
-- Requested speed: `0.72`
-- Target style: calm, confident, technical, non-theatrical
+- Provider: **Descript**
+- Project: `Systemic Resilience Copilot — V3 Narration Master`
+- Composition: `V3 Narration Master`
+- Composition ID: `b8161e59-438f-4d63-a70e-c4c6f834afb5`
+- Voice selected by Agent Underlord: **Buster**
+- Voice description: American male, calm / narrative
+- Media type: Audio
+- Exact composition duration: **117.2 seconds (1:57.2)**
+- Share URL: `https://share.descript.com/view/uMv7g1skyNK`
+- Descript project: `https://web.descript.com/9f5a2ab3-eb50-4bcd-b9da-21bcbcc97836/b8161`
 
-## Render attempt — 2026-10-02
+The master was generated as one continuous audio-only composition with no music, avatar, stock footage or visual layer.
 
-A full V3 speech render was attempted using the synchronized final SSML.
+## Important generation notes
 
-Provider response:
-- HTTP/status class: `402 insufficient_credit`
-- Free voice-generation allowance remaining: **23 seconds**
-- Estimated time required for this render: **130 seconds**
-- Request is not retryable without additional allowance / plan renewal.
+Agent Underlord reported:
+- the script was kept word-for-word in one continuous composition;
+- estimated delivery pace is roughly **127 words/min**, inside the intended 120–130 wpm editorial target;
+- no extra manual pronunciation respelling was applied;
+- no additional proof-state pauses or manual emphasis were added beyond the natural TTS delivery;
+- the generated voice was not auditioned against alternate voices before selection.
 
-No partial final narration was generated because splitting the master into fragments would consume the remaining allowance while still leaving the film incomplete and could introduce voice/prosody inconsistency between sections.
+Therefore the render is usable as a complete master candidate, but it is **not yet release-locked until listening QC passes**.
 
-## Legacy render
+## Mandatory listening QC
 
-The earlier HeyGen render used an older script/SSML and lasted **146.286 seconds (2:26.3)**. It remains archive/fallback material only and must not override the V3 synchronized script.
-
-Legacy configuration:
-- HeyGen speech synthesis
-- Voice: Sebastian
-- Voice ID: `2da5a319054c4dc5803e852d574ccbf8`
-- Locale: `en-US`
-- Output: WAV
-
-## Mandatory listening check after unblock
-
-When the V3 master can be rendered, verify:
-- `Apertus` pronunciation;
+Listen specifically for:
+- `Apertus` → should sound like `uh-PER-tus`;
 - `sixty-minute tolerance`;
 - `ninety-five minutes`;
 - `S five red, B two`;
@@ -57,21 +51,26 @@ When the V3 master can be rendered, verify:
 - `not proof of a shortage`;
 - `When the evidence stops, the inference stops.`
 
-## Timing rule
+Also judge:
+- whether the voice sounds natural rather than robotic;
+- whether the pace is calm enough for product proof;
+- whether any paragraph transition sounds cut or abrupt;
+- whether the proof states need slightly longer pauses.
 
-Do not time-stretch the final narration.
+## Timing decision
 
-After the provider gate is cleared:
-1. render the full synchronized SSML as one master take;
-2. measure the actual duration / waveform;
-3. preserve the wording;
-4. retime visuals and captions only as needed;
-5. update this manifest with the exact final duration and audio URL/file;
-6. proceed to the seven-clip edit assembly.
+The real V3 narration duration is now **117.2 s**. This is substantially shorter than the earlier 2:24 editorial map.
 
-## Unblock condition
+Do **not** time-stretch the narration.
 
-One of the following must happen before the V3 voice stage can pass:
-- HeyGen voice allowance renews;
-- the HeyGen plan is upgraded / additional generation allowance becomes available;
-- another high-quality TTS provider is explicitly connected and approved for the same locked script and voice direction.
+After listening QC:
+1. keep this master if pronunciation and tone pass;
+2. if one phrase fails, regenerate only that phrase/section in the same voice and repair cleanly in Descript;
+3. rebuild `EDIT_TIMING_MAP_V2.csv` around the actual 117.2 s waveform;
+4. retime `VOICEOVER_CAPTIONS_V2.srt` to the real narration;
+5. assemble the seven product clips around this audio;
+6. run frame-level visual and claim QC before YouTube export.
+
+## Superseded audio
+
+The earlier HeyGen 146.286-second master is archive/fallback material only and must not override this V3 script or the Descript render.
