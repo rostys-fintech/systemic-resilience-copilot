@@ -1,0 +1,119 @@
+1
+00:00:00,000 --> 00:00:05,200
+Most resilience plans can tell you
+a backup exists.
+
+2
+00:00:05,200 --> 00:00:10,000
+They cannot tell you whether the critical
+workload will actually recover in time.
+
+3
+00:00:10,000 --> 00:00:16,800
+This is Systemic Resilience Copilot.
+Apertus turns a natural-language recovery scenario
+
+4
+00:00:16,800 --> 00:00:24,000
+into structured evidence. Deterministic rules then identify
+the first condition justified by that evidence.
+
+5
+00:00:24,000 --> 00:00:31,500
+In this synthetic case, Northstar Bank
+has a sixty-minute recovery tolerance.
+
+6
+00:00:31,500 --> 00:00:38,500
+The alternate route is independent,
+supports the same workload, and has been tested.
+
+7
+00:00:38,500 --> 00:00:44,000
+But observed recovery
+takes ninety-five minutes.
+
+8
+00:00:44,000 --> 00:00:51,000
+Apertus extracts the stated facts and leaves
+what is missing unresolved. The rules receive validated evidence.
+
+9
+00:00:51,000 --> 00:00:57,000
+Now the decision
+is simple and traceable.
+
+10
+00:00:57,000 --> 00:01:02,500
+Recovery independence passes,
+but execution fails.
+
+11
+00:01:02,500 --> 00:01:08,500
+Ninety-five minutes is longer than sixty,
+so the workflow stops at S five red, B two.
+
+12
+00:01:08,500 --> 00:01:12,000
+The next action is specific:
+repair execution and retest.
+
+13
+00:01:12,000 --> 00:01:19,000
+Apertus can now challenge and explain
+that fixed decision.
+
+14
+00:01:19,000 --> 00:01:25,000
+It shows why the conclusion follows
+and what evidence is still missing.
+
+15
+00:01:25,000 --> 00:01:29,000
+But it cannot override the rule state.
+AI explains. Rules decide.
+
+16
+00:01:29,000 --> 00:01:36,000
+We apply only the justified fix.
+Recovery now completes in forty-five minutes.
+
+17
+00:01:36,000 --> 00:01:42,000
+S five passes. But the system
+does not declare the bank resilient.
+
+18
+00:01:42,000 --> 00:01:50,000
+Instead, it reveals the next unresolved question:
+simultaneous recovery demand.
+
+19
+00:01:50,000 --> 00:01:56,000
+Only then do we open
+the systemic lens.
+
+20
+00:01:56,000 --> 00:02:02,000
+Three synthetic institutions may rely
+on the same recovery fabric.
+
+21
+00:02:02,000 --> 00:02:08,000
+Upstream recovery passes, but assured capacity,
+priority, and coordination are still unknown.
+
+22
+00:02:08,000 --> 00:02:13,000
+So the correct result is S seven UNKNOWN:
+measure capacity and verify entitlements — not invent a shortage.
+
+23
+00:02:13,000 --> 00:02:18,500
+Evidence becomes a decision,
+and the decision becomes an action.
+
+24
+00:02:18,500 --> 00:02:24,000
+Missing evidence remains visible.
+When the evidence stops, the inference stops.
