@@ -52,10 +52,15 @@ html[data-theme="light"] .heroQuestion,
 html[data-theme="light"] .proofItem strong,
 html[data-theme="light"] .proofItem span{color:var(--cg-light)!important}
 
-/* Light cards nested inside dark hero must switch back to dark text. */
-html[data-theme="light"] .heroOutcome,
-html[data-theme="light"] .heroOutcome :is(span,strong,small){color:var(--cg-dark)!important}
-html[data-theme="light"] .heroOutcome strong{color:#7f3e42!important}
+/* Keep the hero result inside the same dark visual system — no bright cream frame. */
+html[data-theme="light"] .heroOutcome{
+  background:linear-gradient(180deg,rgba(13,23,32,.82),rgba(8,16,24,.88))!important;
+  border:1px solid rgba(235,241,246,.14)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.05),0 10px 24px rgba(0,0,0,.12)!important;
+  color:#f3f6f8!important;
+}
+html[data-theme="light"] .heroOutcome :is(span,small){color:#c7d1d8!important}
+html[data-theme="light"] .heroOutcome strong{color:#df8c91!important}
 html[data-theme="light"] .hero .btn,
 html[data-theme="light"] .heroBtn{color:#171b1f!important}
 
@@ -117,9 +122,15 @@ html[data-theme="dark"] :is(.hero,.principle.primary,.fabricHub,.closingPrincipl
   color:var(--cg-light)!important;
 }
 
-/* If a light chip/card exists inside dark theme, flip its text dark. */
-html[data-theme="dark"] :is(.heroOutcome,.themeBtn[aria-pressed="true"]){color:var(--cg-dark)!important}
-html[data-theme="dark"] .heroOutcome :is(span,strong,small){color:var(--cg-dark)!important}
+/* Dark theme uses the same dark glass result card — never a light frame inside hero. */
+html[data-theme="dark"] .heroOutcome{
+  background:linear-gradient(180deg,rgba(16,31,44,.88),rgba(9,20,30,.94))!important;
+  border:1px solid rgba(226,236,244,.14)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.04),0 10px 24px rgba(0,0,0,.16)!important;
+  color:#f1f5f8!important;
+}
+html[data-theme="dark"] .heroOutcome :is(span,small){color:#b9c7d1!important}
+html[data-theme="dark"] .heroOutcome strong{color:#ef9a9e!important}
 
 /* Step rail + theme switch. */
 html[data-theme="dark"] .flow span{color:#bdc7cf!important}
@@ -148,4 +159,5 @@ html[data-theme="dark"] .trace .stage.r{color:#f0d3d5!important}
 @media(max-width:760px){
   html[data-theme="light"] .flow span{color:#d7d2cc!important}
   html[data-theme="dark"] .flow span{color:#c5cfd7!important}
+  .heroOutcome{border-radius:12px!important}
 }
