@@ -1,263 +1,234 @@
-# Systemic Resilience Copilot — Screen Capture Shot List
+# Systemic Resilience Copilot — Final Screen Capture Shot List V2
 
-**Status:** LOCKED FOR CAPTURE  
-**Audio authority:** HeyGen master render, **146.286 s (2:26.3)**  
+**Status:** READY FOR FINAL CAPTURE  
+**Narration authority:** `video/VOICEOVER_MASTER.md`  
+**Director bible:** `video/FINAL_YOUTUBE_PRODUCTION_BIBLE.md`  
 **Production URL:** https://systemic-resilience-copilot.vercel.app/  
-**Capture format:** 1920×1080, 30 fps, browser at 100% zoom
+**Capture format:** 1920×1080 minimum, 30 fps, browser at 100% zoom  
+**Theme:** Light theme only for the final film
 
-## Timing authority
+## Important UI update
 
-The current master audio is shorter than the original 2:43 script timing. For capture/edit planning, use the real audio duration as authority. Do not force the screen recording to match the older caption timestamps.
+The final product intentionally removes the old top-right `Apertus live · parse + challenge` badge and other duplicate labels. Do **not** try to restore or fake that badge for filming. Live Apertus is demonstrated through the real parse/explanation actions and validated product behavior.
 
-Use seven raw clips. Record each with roughly **2 seconds of extra handle before and after** the usable section so the editor can trim cleanly.
+Record seven independent raw clips. Each clip needs ~2 seconds of handle before and after the usable action.
 
-| Clip | Edit window | Target length | Main proof |
-|---|---:|---:|---|
-| 01 Hero + product | 00:00–00:28 | 28 s | problem + product architecture |
-| 02 Apertus parse | 00:28–00:56 | 28 s | live natural-language extraction |
-| 03 Decision | 00:56–01:16 | 20 s | 95 > 60 → S5 RED / B2 |
-| 04 Apertus review | 01:16–01:34 | 18 s | live challenge / explanation |
-| 05 Fix + rerun | 01:34–01:52 | 18 s | 45 min → S6 UNKNOWN |
-| 06 Systemic lens | 01:52–02:16 | 24 s | S7 UNKNOWN, no invented B3 shortage |
-| 07 Closing frame | 02:16–02:26.3 | 10.3 s | Evidence → Decision → Action |
+| Clip | Edit window | Main proof |
+|---|---:|---|
+| 01 Hero / product | 00:00–00:24 | problem + product architecture |
+| 02 Apertus parse | 00:24–00:51 | natural-language → validated evidence |
+| 03 Decision | 00:51–01:12 | 95 > 60 → S5 RED / B2 |
+| 04 Apertus explain | 01:12–01:29 | AI explains; state remains rule-controlled |
+| 05 Fix / rerun | 01:29–01:50 | 45 min → next unresolved state |
+| 06 Systemic lens | 01:50–02:13 | S7 UNKNOWN; no invented shortage |
+| 07 Close | 02:13–02:24 | Evidence → Decision → Action |
 
 ---
 
 # PRE-FLIGHT
 
-Before every capture session:
+1. Open the production root in a fresh tab.
+2. Hard refresh once.
+3. Select **Light** theme.
+4. Browser zoom = 100%.
+5. Window/capture area fixed at 16:9.
+6. Hide bookmarks bar.
+7. Close unrelated tabs/windows.
+8. Disable notifications.
+9. Restore the default synthetic Northstar scenario.
+10. Run one complete rehearsal.
+11. Reload and begin final capture.
+12. Never expose tokens, Vercel settings, autofill, private GitHub pages or personal tabs.
 
-1. Open the production root in a fresh browser tab.
-2. Confirm the top-right status says **Apertus live**.
-3. Browser zoom = **100%**.
-4. Hide bookmarks bar and unrelated tabs.
-5. Disable desktop/browser notifications.
-6. Use the default synthetic Northstar scenario.
-7. Hard refresh once before the first take.
-8. Keep the browser window fixed at 16:9; do not resize mid-recording.
-9. Move the cursor slowly and deliberately.
-10. Never expose tokens, Vercel settings, browser autofill, or private GitHub pages.
-
-Record the product with **no narration captured from the computer**; the HeyGen master track is added in edit.
+Record screen only. Final narration is added in edit.
 
 ---
 
-# CLIP 01 — HERO + PRODUCT
+# CLIP 01 — HERO / PRODUCT
 
-**Edit window:** 00:00–00:28  
-**Suggested raw file:** `01_hero_product.mp4`
+**Raw name:** `01_HERO_PRODUCT.mp4`
 
-## Start frame
-Fresh page load at the top of the homepage.
+Start at the very top.
 
-Must be visible:
-- `Systemic Resilience Copilot`;
-- `Apertus live`;
-- hero line `From messy recovery scenario to a traceable decision.`;
-- the 95-minute vs 60-minute demo fact;
-- six-step flow.
+Must show:
+- Systemic Resilience Copilot brand;
+- dark navy hero;
+- main recovery question;
+- `95 min > 60 min` proof;
+- six-step product rail after one small scroll.
 
-## Direction
-- Hold the hero for ~4 s.
-- Make one subtle downward scroll so the six-step flow and scenario card are both readable.
-- Pause the pointer over **Run AI-assisted demo** for ~0.5 s, but do not click until the very end of the clip if that gives a cleaner transition into Clip 02.
+Direction:
+- hold hero ~3 s;
+- slow cursor movement only;
+- make one small scroll to reveal the rail + scenario;
+- no clicks until the handoff into Clip 02.
 
-## Judge takeaway
-A backup / dependency view is not the final answer; the product runs an ordered evidence-to-decision process.
-
-## Avoid
+Avoid:
+- theme switching;
+- random scrolling;
 - technical trace;
-- README / GitHub;
-- long scrolling;
-- any code.
+- footer/disclaimer area.
 
 ---
 
-# CLIP 02 — LIVE APERTUS PARSE
+# CLIP 02 — APERTUS PARSE
 
-**Edit window:** 00:28–00:56  
-**Suggested raw file:** `02_apertus_parse.mp4`
+**Raw name:** `02_APERTUS_PARSE.mp4`
 
-## Start frame
-Scenario card visible with the default Northstar text and **Structure with Apertus & analyse** button.
+Start with scenario + **Structure with Apertus & analyse** visible.
 
-## Action
-1. Hover ~0.5 s.
-2. Click **Structure with Apertus & analyse**.
-3. Let the parse animation run without manual scrolling while the app is moving.
-4. When validated facts appear, hold them for at least 3 s.
-5. Make sure the **KNOWN → UNKNOWN → NEEDED NEXT** block is visible before ending the take.
+Action:
+1. hover ~0.5 s;
+2. click;
+3. capture beginning of processing;
+4. let the real parse complete;
+5. hold validated facts for at least 3 s.
 
-## Must visibly prove
-- parse mode = **Apertus live**;
-- recovery target = **60 min**;
-- recovery route = **Independent**;
-- execution test = **Tested**;
-- observed recovery = **95 min**;
-- simultaneous-demand / capacity-related fields remain UNKNOWN.
+Must show:
+- recovery target = 60 min;
+- recovery route = Independent;
+- execution test = Tested;
+- observed recovery = 95 min;
+- missing downstream evidence remains unresolved.
 
-## If the live call is slow
-Keep recording. In edit, cut waiting time but preserve the beginning of the animation and the final validated result.
+If the live call waits too long, keep recording and trim dead time in edit.
 
-## If the live call fails
-Discard only this clip and rerecord it. Do not replace a failed live call with fallback footage in the final video.
+If the call fails, rerecord this clip. Do not use fallback footage as live proof.
 
 ---
 
-# CLIP 03 — DETERMINISTIC DECISION
+# CLIP 03 — DECISION
 
-**Edit window:** 00:56–01:16  
-**Suggested raw file:** `03_decision.mp4`
+**Raw name:** `03_DECISION.mp4`
 
-## Start frame
-Decision section visible immediately after the rules finish.
+Start as the deterministic decision appears.
 
-## Must visibly prove
-- title **Recovery is too slow**;
-- metric **95 min > 60 min**;
-- first binding state **S5 RED · B2**;
-- action is execution repair / retest;
-- systemic analysis is still blocked until the upstream execution condition is repaired.
+Must show:
+- `Recovery is too slow`;
+- `95 min > 60 min`;
+- `S5 RED · B2`;
+- repair / retest action;
+- systemic step still not treated as justified yet.
 
-## Direction
-- Hold `95 min > 60 min` for ~4 s.
-- Hold the B2 / action wording for ~3 s.
-- Do **not** open the technical trace unless a second optional take is recorded. The main judge cut should stay simple.
+Direction:
+- hold metric ~4 s;
+- hold state/action ~3 s;
+- do not open technical trace in the main take.
 
-## Judge takeaway
-The rule layer — not the language model — selects the binding recovery condition.
+Optional second take: technical trace for archive only, not default final cut.
 
 ---
 
-# CLIP 04 — LIVE APERTUS REVIEW
+# CLIP 04 — APERTUS EXPLAIN
 
-**Edit window:** 01:16–01:34  
-**Suggested raw file:** `04_apertus_review.mp4`
+**Raw name:** `04_APERTUS_EXPLAIN.mp4`
 
-## Start frame
-Decision still visible, with **Why? Ask Apertus** button.
+Start with **Why?** visible.
 
-## Action
-1. Hover ~0.5 s.
-2. Click **Why? Ask Apertus**.
-3. Capture the processing animation.
-4. Hold the final **Apertus live review** long enough to read the explanation, challenge and missing evidence.
+Action:
+1. hover ~0.5 s;
+2. click;
+3. capture the explanation animation;
+4. show the three explanation cards;
+5. if the detailed Apertus review appears, hold only long enough to prove it returned.
 
-## Must visibly prove
-- Apertus review returned in production;
-- decision remains fixed;
-- missing evidence is surfaced instead of being filled by inference;
-- validated evidence/rule references are present.
+Editorial priority:
+- explanation cards first;
+- dense review text second.
 
-## Do not claim
-That Apertus independently sets the supervisory decision.
+Do not imply Apertus sets or changes the state.
 
 ---
 
-# CLIP 05 — APPLY FIX + RERUN
+# CLIP 05 — FIX / RERUN
 
-**Edit window:** 01:34–01:52  
-**Suggested raw file:** `05_fix_rerun.mp4`
+**Raw name:** `05_FIX_RERUN.mp4`
 
-## Start frame
-Back on the Decision block with **Apply the fix** visible.
+Start with **Apply the fix** visible.
 
-## Action
-1. Click **Apply the fix**.
-2. Capture all three visible steps: repair execution → retest workload → rerun rules.
-3. Hold the before/after block.
+Action:
+1. click;
+2. capture repair → retest → rerun;
+3. hold Before / After.
 
-## Must visibly prove
-- observed recovery changes to **45 min**;
-- S5 passes after the narrow fix;
-- result moves to **S6 UNKNOWN**;
-- next action becomes establishing simultaneous-demand evidence;
-- product does not declare `fully resilient`.
-
-## Judge takeaway
-Fixing one problem exposes the next justified evidence gap.
+Must show:
+- recovery becomes 45 min;
+- S5 passes;
+- next state becomes unresolved / S6 UNKNOWN;
+- product does not declare full resilience.
 
 ---
 
 # CLIP 06 — SYSTEMIC LENS
 
-**Edit window:** 01:52–02:16  
-**Suggested raw file:** `06_systemic_lens.mp4`
+**Raw name:** `06_SYSTEMIC.mp4`
 
-## Start frame
-Before/after section visible with **Open systemic lens** button.
+Start with **Open systemic lens** visible.
 
-## Action
-1. Click **Open systemic lens**.
-2. Let the systemic evidence animation complete.
-3. Hold the final result for at least 4 s.
+Action:
+1. click;
+2. let systemic animation run;
+3. hold final state at least 4 s.
 
-## Must visibly prove
-- Aurora Bank, Meridian Bank and Harbor Bank;
-- shared ResilienceGrid recovery fabric;
-- S4 independence = PASS;
-- S5 execution = PASS;
+Must show:
+- Aurora;
+- Meridian;
+- Harbor;
+- ResilienceGrid;
+- upstream S4/S5 pass;
 - simultaneous claimants = 3;
-- assured capacity / rights = UNKNOWN;
-- final state = **S7 UNKNOWN**;
-- next action = measure capacity / obtain entitlement evidence;
-- refused conclusion: shared recovery resource ≠ B3 capacity shortage.
-
-## Judge takeaway
-The systemic layer appears only after upstream recoverability is established, and it refuses to invent a shortage from shared exposure alone.
+- assured capacity / rights unresolved;
+- `S7 UNKNOWN`;
+- next action = measure capacity / verify entitlement;
+- `Shared recovery resource ≠ proven shortage.`
 
 ---
 
 # CLIP 07 — CLOSE
 
-**Edit window:** 02:16–02:26.3  
-**Suggested raw file:** `07_close.mp4`
+**Raw name:** `07_CLOSE.mp4`
 
-## Preferred visual
-Use a clean freeze or slow 3–5% digital zoom on one of these:
+Do not click anything.
 
-1. product hero with `Systemic Resilience Copilot` and `Apertus live`; or
-2. the final systemic result with the closing text overlay added in edit.
+Preferred source:
+- clean hero freeze or a specially held top-of-page hero take.
 
-## Final overlay in edit
+Add in edit:
+
 **Systemic Resilience Copilot**  
 **Evidence → Decision → Action**
 
-Small footer only:
-- production URL;
-- public GitHub repository.
+Small footer:
+- systemic-resilience-copilot.vercel.app
+- github.com/rostys-fintech/systemic-resilience-copilot
 
-## Final spoken line alignment
-Hold the visual steady during:
-`Apertus structures and explains. Deterministic rules preserve decision integrity. And when the evidence stops, the inference stops.`
-
-No extra clicks in the final 5 seconds.
+Hold steady through the final spoken line.
 
 ---
 
-# CAPTURE ACCEPTANCE GATE
+# CURSOR RULES
 
-The raw-screen package passes only when all seven clips exist and the following are visibly captured:
+- cursor movement should have intent;
+- hover 0.4–0.6 s before an important click;
+- never circle or wave the pointer;
+- keep cursor away from text the viewer is reading;
+- let auto-scroll finish before the next edit beat;
+- if the app moves unexpectedly, rerecord that clip instead of trying to save it with frantic scrolling.
 
-- Apertus live status;
-- live extraction;
+---
+
+# RAW CAPTURE ACCEPTANCE
+
+All seven files must exist and visibly prove:
 - 60 min target;
 - 95 min observed recovery;
+- real Apertus parse behavior;
 - S5 RED / B2;
-- live Apertus review;
-- Apply Fix animation;
-- 45 min recovery;
-- S6 UNKNOWN;
+- Apertus explanation behavior;
+- 45 min after intervention;
+- next unresolved state;
 - systemic lens;
 - S7 UNKNOWN;
-- explicit refusal to infer a B3 capacity shortage.
+- explicit refusal to infer a capacity shortage.
 
-## Important timing note
-
-`video/VOICEOVER_CAPTIONS.srt` still reflects the earlier ~2:43 target timing and must **not** be treated as final sync for this 2:26.3 audio render. Retiming captions belongs to the edit/caption stage after the real master audio waveform is placed on the timeline.
-
-## Next production stage
-
-After the seven raw clips are recorded, move to **EDIT ASSEMBLY**:
-
-`master voice track → seven trimmed clips → six judge overlays → captions retime → audio polish → QC → export`.
+Then move to edit using `video/EDIT_TIMING_MAP_V2.csv`.
