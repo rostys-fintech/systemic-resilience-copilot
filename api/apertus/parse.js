@@ -1,5 +1,5 @@
 import { API_BASE_DEFAULT, MODEL_DEFAULT, extractJson } from "../../lib/apertus-contract.js";
-import { PARSE_SYSTEM_PROMPT, mockParsedScenario, validateParseInput, validateParsedScenario } from "../../lib/scenario-parser.js";
+import { PARSE_SYSTEM_PROMPT, mockParsedScenario, reconcileExplicitFacts, validateParseInput, validateParsedScenario } from "../../lib/scenario-parser.js";
 
 export default async function handler(req,res){
   if(req.method!=="POST") return res.status(405).json({ok:false,error:"Method not allowed"});
@@ -36,7 +36,8 @@ export default async function handler(req,res){
     if(!r.ok) return res.status(502).json({ok:false,error:`Apertus provider HTTP ${r.status}: ${rawText.slice(0,400)}`});
     const raw=JSON.parse(rawText);
     const content=raw?.choices?.[0]?.message?.content;
-    const parsed=validateParsedScenario(extractJson(content));
+    const modelParsed=validateParsedScenario(extractJson(content));
+    const parsed=reconcileExplicitFacts(input.text,modelParsed);
     return res.status(200).json({ok:true,mode:"live",model,latency_ms:Date.now()-started,parsed});
   }catch(e){
     const msg=e?.name==="AbortError"?"Apertus provider timeout":String(e?.message||e);
