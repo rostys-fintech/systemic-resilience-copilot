@@ -12,6 +12,15 @@
     document.head.appendChild(link);
   }
 
+  /* Load art-directed page/hero backgrounds last so the live themes match the concept boards. */
+  if(!document.querySelector('link[data-theme-backgrounds]')){
+    const link=document.createElement('link');
+    link.rel='stylesheet';
+    link.href='/theme-backgrounds.css';
+    link.dataset.themeBackgrounds='1';
+    document.head.appendChild(link);
+  }
+
   let meta=document.querySelector('meta[name="theme-color"]');
   if(!meta){meta=document.createElement('meta');meta.name='theme-color';document.head.appendChild(meta)}
 
