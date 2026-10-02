@@ -3,7 +3,7 @@
   const style=document.createElement('style');
   style.textContent=`
     .evidenceGrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.evidenceCol{border:1px solid var(--line);border-radius:11px;padding:15px;background:#fafcfd}.evidenceCol h4{font-size:12px;margin:0 0 9px;color:var(--navy)}.evidenceCol ul{margin:0;padding-left:17px}.evidenceCol li{font-size:10px;line-height:1.55;color:#4f6070;margin:5px 0}.evidenceRule{margin-top:12px;border:1px solid #d8c986;border-left:5px solid #c18a10;border-radius:10px;background:#fffaf0;padding:13px}.evidenceRule b{display:block;font-size:11px;color:#76560a;margin-bottom:5px}.evidenceRule p{margin:0;font-size:10px;line-height:1.55;color:#5d5336}.evidenceBadge{display:inline-block;padding:3px 7px;border-radius:999px;background:var(--amberbg);color:var(--amber);font-size:8px;font-weight:900;text-transform:uppercase;margin-left:6px}
-    .card,.process,#evidenceBoundaryCard{scroll-margin-top:78px}.btn{min-height:44px;touch-action:manipulation}.btn:focus-visible,summary:focus-visible,textarea:focus-visible{outline:3px solid rgba(40,90,128,.25);outline-offset:2px}.interactionLocked .btn:not(.loading){pointer-events:none;opacity:.68}.ai,.decision,.why,.evidenceCol,.evidenceUXCol,.systemicResult{overflow-wrap:anywhere}.flow{scrollbar-width:none}.flow::-webkit-scrollbar{display:none}
+    .card,.process,#evidenceBoundaryCard{scroll-margin-top:78px}.btn{min-height:44px;touch-action:manipulation}.btn:focus-visible,summary:focus-visible,textarea:focus-visible,.flow span:focus-visible{outline:3px solid rgba(40,90,128,.25);outline-offset:2px}.interactionLocked .btn:not(.loading){pointer-events:none;opacity:.68}.ai,.decision,.why,.evidenceCol,.evidenceUXCol,.systemicResult{overflow-wrap:anywhere}.flow{scrollbar-width:none}.flow::-webkit-scrollbar{display:none}
     @media(max-width:760px){.evidenceGrid{grid-template-columns:1fr}.status{display:block!important;max-width:44vw;text-align:right;font-size:8px;line-height:1.2}.brand small{display:none}.hero h1{font-size:30px}.btnrow .btn{min-height:46px}.card,.process,#evidenceBoundaryCard{scroll-margin-top:72px}}
     @media(max-width:480px){.btnrow{display:grid;grid-template-columns:1fr}.btnrow .btn{width:100%}.scenario textarea{min-height:155px}.head p,.helper,.why p,.ai p,.meta,.systemicResult p,.evidenceCol li,.evidenceRule p,.evidenceUXCol li,.evidenceUXCol p{font-size:11px}.top{gap:8px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.check.running,.sysStep.running{transform:none!important}}
@@ -70,42 +70,63 @@
     for(let i=1;i<=4;i++){const e=$('sys'+i);if(e)e.className='sysStep'}
   });
 
-  /* Clickable stage navigation. It never reveals a hidden downstream state; it only navigates to stages the demo has actually reached. */
+  /* Stage rail acts as real navigation. Clicking a future stage runs only the prerequisite demo actions needed to reach it. */
   const flow=document.getElementById('flow');
   const flowSteps=flow?[...flow.querySelectorAll('span')]:[];
   const targets=['scenarioCard','parseProcess','rulesProcess','decisionCard','whyCard','systemicCard'];
-  const targetFor=(index)=>$(targets[index]);
-  const visible=el=>Boolean(el&&!el.classList.contains('hidden'));
-  const latestVisibleBefore=index=>{
-    for(let i=index;i>=0;i--){const el=targetFor(i);if(visible(el))return el}
-    return $('scenarioCard');
+  const visible=id=>Boolean($(id)&&!$(id).classList.contains('hidden'));
+  const reduced=()=>matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const scrollTo=id=>$(id)?.scrollIntoView({behavior:reduced()?'auto':'smooth',block:'start'});
+  const waitFor=async(test,timeout=90000)=>{
+    const started=Date.now();
+    while(!test()){
+      if(Date.now()-started>timeout)throw new Error('Stage navigation timed out');
+      await new Promise(r=>setTimeout(r,120));
+    }
   };
-  const syncFlowNav=()=>{
-    flowSteps.forEach((step,index)=>{
-      const unlocked=visible(targetFor(index));
-      step.classList.toggle('locked',!unlocked);
-      step.setAttribute('aria-disabled',unlocked?'false':'true');
-      step.title=unlocked?'Go to this stage':'Complete the previous stage first';
-    });
+  const ensureDecision=async()=>{
+    if(visible('decisionCard'))return;
+    if(typeof startFlow==='function')await startFlow('parseBtn');
+    await waitFor(()=>visible('decisionCard'));
   };
-  const navigate=(step,index)=>{
+  const navigateStage=async(index,step)=>{
     if(document.body.classList.contains('interactionLocked'))return;
-    const target=visible(targetFor(index))?targetFor(index):latestVisibleBefore(index);
-    if(!target)return;
     flowSteps.forEach(x=>x.classList.remove('viewing'));
     step.classList.add('viewing');
-    target.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
+    try{
+      if(index===0){scrollTo('scenarioCard');return;}
+      if(index<=3){
+        if(!visible('decisionCard'))await ensureDecision();
+        scrollTo(targets[index]);
+        return;
+      }
+      if(index===4){
+        await ensureDecision();
+        if(!visible('whyCard')&&typeof why==='function')await why();
+        await waitFor(()=>visible('whyCard'));
+        scrollTo('whyCard');
+        return;
+      }
+      if(index===5){
+        await ensureDecision();
+        if(!visible('compareCard')&&typeof fix==='function'&&decision?.binding==='B2')await fix();
+        if(!visible('systemicCard')){
+          const b=$('systemicBtn');
+          if(b){b.click();await waitFor(()=>visible('systemicCard'))}
+        }
+        scrollTo('systemicCard');
+      }
+    }catch(err){
+      console.warn('Stage navigation:',err);
+      scrollTo('scenarioCard');
+    }
   };
   flowSteps.forEach((step,index)=>{
     step.setAttribute('role','button');
     step.setAttribute('tabindex','0');
-    step.dataset.navTarget=targets[index];
-    step.addEventListener('click',()=>navigate(step,index));
-    step.addEventListener('keydown',e=>{
-      if(e.key==='Enter'||e.key===' '){e.preventDefault();navigate(step,index)}
-    });
+    step.setAttribute('aria-label',`Open stage ${index+1}: ${step.textContent.trim()}`);
+    step.title='Open this stage; required prior steps will run automatically.';
+    step.addEventListener('click',()=>navigateStage(index,step));
+    step.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();navigateStage(index,step)}});
   });
-  const flowObserver=new MutationObserver(syncFlowNav);
-  ['parseProcess','rulesProcess','decisionCard','whyCard','systemicCard'].forEach(id=>{const el=$(id);if(el)flowObserver.observe(el,{attributes:true,attributeFilter:['class']})});
-  syncFlowNav();
 })();
