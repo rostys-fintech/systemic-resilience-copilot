@@ -1,46 +1,53 @@
-# Systemic Resilience Copilot — YouTube / Devpost Video Upload Package
+# Systemic Resilience Copilot — Final YouTube / Devpost Upload Package
 
-Purpose: create the public video URL required by the live Devpost **Video demo link** field.
+**Status:** METADATA LOCKED — WAITING FOR NEW FINAL V2 RENDER
 
-## Master file
+The earlier 2:26.3 walkthrough master is now **superseded for final submission** by the judge-first V2 production package. Do not upload the older master unless the new edit cannot be completed.
 
-Upload:
+Use:
+- `video/FINAL_YOUTUBE_PRODUCTION_BIBLE.md`
+- `video/VOICEOVER_MASTER.md`
+- `video/SCREEN_CAPTURE_SHOTLIST.md`
+- `video/EDIT_TIMING_MAP_V2.csv`
+- `video/VOICEOVER_CAPTIONS_V2.srt`
 
-`Systemic_Resilience_Copilot_SUBMISSION_FINAL_1080p.mp4`
+## New final master filename
 
-Locked release properties:
-- 1920×1080
+`Systemic_Resilience_Copilot_YOUTUBE_FINAL_V2.mp4`
+
+Target properties:
+- 1920×1080 minimum
 - 30 fps
-- 2:26.3
-- H.264 + AAC
+- ~2:15–2:25
+- H.264 High Profile + AAC 48 kHz
+- judge-first edit
 - burned-in English captions
+- fast-start / web optimized
 
 ## Recommended host
 
-Use **YouTube** because the current Devpost field explicitly accepts a YouTube or Vimeo URL.
+Use **YouTube** because the live Devpost field accepts YouTube or Vimeo URLs.
 
-Recommended visibility: **Unlisted**.
+Visibility: **Unlisted** unless the hackathon explicitly requires Public.
 
-Acceptance condition before using the URL in Devpost:
-- opens without signing into the uploader account;
-- playback works in an incognito/private browser;
-- title and description are visible;
-- captions are already burned into the video, so Devpost playback does not depend on platform subtitle settings.
+## Final YouTube title
 
-## Exact YouTube title
+**A Backup Exists. Will It Recover in Time? | Systemic Resilience Copilot**
 
-**Systemic Resilience Copilot | Hack Apertus 2026**
+## First two description lines
 
-## Exact YouTube description
+Systemic Resilience Copilot turns natural-language recovery evidence into a traceable next action. Apertus structures and explains; deterministic rules preserve the decision state and missing evidence as `UNKNOWN`.
+
+## Full description
 
 **Systemic Resilience Copilot** is an AI-assisted decision-support prototype for banking ICT recoverability, built for Hack Apertus.
 
 Apertus structures explicit recovery evidence from normal-language scenarios and later challenges/explains the result. Deterministic rules remain authoritative for the recovery state and next justified action.
 
-Main demo path:
+Main product path:
 **95 min > 60 min → S5 RED / B2 → REPAIR_EXECUTION → 45 min → S6 UNKNOWN → Systemic lens → S7 UNKNOWN**
 
-The prototype preserves missing evidence as `UNKNOWN` and does not infer a capacity shortage from shared recovery exposure alone.
+The prototype preserves missing evidence as `UNKNOWN` and refuses to infer a recovery-capacity shortage from shared exposure alone.
 
 Live demo:
 https://systemic-resilience-copilot.vercel.app/
@@ -51,20 +58,37 @@ https://github.com/rostys-fintech/systemic-resilience-copilot
 Technical report:
 https://github.com/rostys-fintech/systemic-resilience-copilot/blob/main/TECHNICAL_REPORT.md
 
-This video is a **reconstructed public-safe product walkthrough**, not a continuous live browser recording. It uses synthetic demo scenarios and the frozen deterministic decision logic.
+The film uses public-safe synthetic scenarios and edited product footage. It should not be described as a continuous live-browser recording.
+
+## Thumbnail direction
+
+Use a real high-resolution product frame.
+
+Composition:
+- dark navy hero;
+- `95 min > 60 min` is the visual anchor;
+- short text: **WILL IT RECOVER IN TIME?**
+- small SRC/product mark;
+- no collage;
+- no faces;
+- no generic AI robot;
+- no clickbait language;
+- no more than 5–6 headline words.
 
 ## Suggested YouTube settings
 
 - Visibility: **Unlisted**
 - Audience: **No, it’s not made for kids**
-- Altered/synthetic content disclosure: answer according to the final YouTube upload UI; do not describe the product demo as real-world footage.
-- Embedding: allow embedding if the option is presented.
-- Comments: optional; they are not needed for judging.
-- Chapters: do not add unless desired; the film is only 2:26.
+- Embedding: allow embedding if shown
+- Comments: optional / not needed for judging
+- Chapters: unnecessary for a ~2:20 film
+- Upload the final thumbnail manually after video processing
+
+For altered/synthetic-content questions, answer according to the actual YouTube UI and the fact that this is an edited software-product demonstration using synthetic demo scenarios, not documentary footage of real events.
 
 ## Devpost field
 
-After upload, paste the canonical YouTube watch URL into:
+Paste the canonical YouTube watch URL into:
 
 **Project details → Project Media → Video demo link**
 
@@ -74,16 +98,15 @@ Do not paste a YouTube Studio/edit URL.
 
 Before saving Devpost:
 
-1. open the YouTube watch URL in an incognito/private window;
-2. confirm the full 2:26.3 video plays;
+1. open the watch URL in incognito/private mode;
+2. confirm the full new V2 film plays without login;
 3. confirm audio works;
-4. confirm burned-in captions are readable at 1080p and 720p;
-5. confirm the key states are legible: `S5 RED · B2`, `S6 UNKNOWN`, `S7 UNKNOWN`;
-6. confirm the description does not call the walkthrough a live recording;
-7. paste the same verified watch URL into Devpost.
+4. confirm captions remain readable at 1080p and 720p;
+5. confirm `95 > 60`, `S5 RED · B2`, `45 min`, `S6 UNKNOWN`, and `S7 UNKNOWN` are legible;
+6. confirm the thumbnail is the product-first judge thumbnail;
+7. confirm the description does not call the film a continuous live recording;
+8. paste that verified watch URL into Devpost.
 
-## Status
+## Final rule
 
-**UPLOAD PACKAGE READY.**
-
-External action still required: upload the locked MP4 to YouTube or Vimeo and return the public/unlisted watch URL.
+Do not upload the old master simply because it already exists. The YouTube/Devpost version should be the **judge-first V2 product film** defined by the current production bible.
