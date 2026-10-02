@@ -1,0 +1,146 @@
+/* Ambient backgrounds that match the approved concept boards.
+   Loaded after dual-theme.css; visual only. */
+
+/* Shared ambient canvas */
+body{position:relative;isolation:isolate}
+.wrap{position:relative;z-index:1}
+body:before,body:after{content:"";position:fixed;pointer-events:none;z-index:0}
+
+/* LIGHT — Obsidian & Sand, with warm architectural stone ambience */
+html[data-theme="light"] body{
+  background-color:#c9bfb2!important;
+  background-image:url('/assets/obsidian-sand-page.svg')!important;
+  background-size:cover!important;
+  background-position:center top!important;
+  background-repeat:no-repeat!important;
+  background-attachment:fixed!important;
+}
+html[data-theme="light"] body:before{
+  inset:0;
+  opacity:.48!important;
+  background:
+    linear-gradient(90deg,rgba(11,15,20,.16),transparent 15%,transparent 85%,rgba(59,44,32,.12)),
+    radial-gradient(circle at 50% 18%,rgba(255,249,241,.32),transparent 38%)!important;
+}
+html[data-theme="light"] body:after{
+  left:0;right:0;bottom:0;height:36vh;
+  background:linear-gradient(180deg,transparent,rgba(103,82,63,.08))!important;
+}
+html[data-theme="light"] .top{
+  background:rgba(239,232,223,.78)!important;
+  backdrop-filter:blur(22px) saturate(.9)!important;
+}
+html[data-theme="light"] .hero{
+  background-image:url('/assets/obsidian-sand-hero.svg')!important;
+  background-size:cover!important;
+  background-position:center!important;
+  background-repeat:no-repeat!important;
+}
+html[data-theme="light"] .heroVisual{
+  backdrop-filter:blur(8px) saturate(.85)!important;
+}
+html[data-theme="light"] .card,
+html[data-theme="light"] .process,
+html[data-theme="light"] #evidenceBoundaryCard{
+  background:linear-gradient(180deg,rgba(244,237,228,.94),rgba(232,222,210,.92))!important;
+  backdrop-filter:blur(14px) saturate(.9)!important;
+}
+html[data-theme="light"] .head{
+  background:linear-gradient(180deg,rgba(238,228,216,.94),rgba(224,212,198,.92))!important;
+}
+html[data-theme="light"] .body,
+html[data-theme="light"] .scenarioCard .body,
+html[data-theme="light"] .decisionCard .body{
+  background:linear-gradient(180deg,rgba(245,239,231,.92),rgba(231,222,212,.90))!important;
+}
+html[data-theme="light"] .flow{
+  background:linear-gradient(180deg,rgba(18,24,30,.96),rgba(11,16,21,.96))!important;
+  backdrop-filter:blur(14px)!important;
+}
+
+/* DARK — Smoked Navy & Pearl, with fog / orbital ambience */
+html[data-theme="dark"] body{
+  background-color:#08111a!important;
+  background-image:url('/assets/smoked-navy-page.svg')!important;
+  background-size:cover!important;
+  background-position:center top!important;
+  background-repeat:no-repeat!important;
+  background-attachment:fixed!important;
+}
+html[data-theme="dark"] body:before{
+  inset:0;
+  opacity:1!important;
+  background:
+    linear-gradient(90deg,rgba(0,7,13,.34),transparent 18%,transparent 82%,rgba(0,7,13,.30)),
+    radial-gradient(circle at 52% 12%,rgba(91,133,168,.07),transparent 32%)!important;
+}
+html[data-theme="dark"] body:after{
+  left:0;right:0;bottom:0;height:42vh;
+  background:linear-gradient(180deg,transparent,rgba(2,8,13,.24))!important;
+}
+html[data-theme="dark"] .top{
+  background:rgba(10,19,28,.78)!important;
+  backdrop-filter:blur(22px) saturate(.95)!important;
+}
+html[data-theme="dark"] .hero{
+  background-image:url('/assets/smoked-navy-hero.svg')!important;
+  background-size:cover!important;
+  background-position:center!important;
+  background-repeat:no-repeat!important;
+}
+html[data-theme="dark"] .heroVisual{
+  backdrop-filter:blur(9px) saturate(.85)!important;
+}
+html[data-theme="dark"] .card,
+html[data-theme="dark"] .process,
+html[data-theme="dark"] #evidenceBoundaryCard{
+  background:linear-gradient(180deg,rgba(18,29,39,.94),rgba(12,22,31,.92))!important;
+  backdrop-filter:blur(15px) saturate(.9)!important;
+}
+html[data-theme="dark"] .head{
+  background:linear-gradient(180deg,rgba(24,39,51,.94),rgba(17,30,41,.93))!important;
+}
+html[data-theme="dark"] .body,
+html[data-theme="dark"] .scenarioCard .body,
+html[data-theme="dark"] .decisionCard .body{
+  background:linear-gradient(180deg,rgba(20,33,44,.92),rgba(12,23,32,.91))!important;
+}
+html[data-theme="dark"] .flow{
+  background:linear-gradient(180deg,rgba(9,21,31,.96),rgba(5,14,22,.96))!important;
+  backdrop-filter:blur(14px)!important;
+}
+
+/* Give the concept-art ambience room to breathe around the product. */
+@media(min-width:1100px){
+  .wrap{padding-top:24px!important;padding-bottom:72px!important}
+  html[data-theme="light"] .wrap,
+  html[data-theme="dark"] .wrap{filter:drop-shadow(0 30px 60px rgba(10,18,25,.04))}
+}
+
+/* Mobile: keep the same art direction without expensive fixed-background repainting. */
+@media(max-width:760px){
+  html[data-theme="light"] body,
+  html[data-theme="dark"] body{
+    background-attachment:scroll!important;
+    background-size:auto 1150px!important;
+    background-position:center top!important;
+  }
+  body:before{position:absolute!important}
+  body:after{position:absolute!important}
+  html[data-theme="light"] .hero{
+    background-position:62% center!important;
+  }
+  html[data-theme="dark"] .hero{
+    background-position:70% center!important;
+  }
+  html[data-theme="light"] .card,
+  html[data-theme="light"] .process,
+  html[data-theme="dark"] .card,
+  html[data-theme="dark"] .process{
+    backdrop-filter:none!important;
+  }
+}
+
+@media(prefers-reduced-transparency:reduce){
+  .top,.card,.process,.heroVisual{backdrop-filter:none!important}
+}
