@@ -4,9 +4,9 @@ Date: 2026-10-02
 
 ## Release verdict
 
-**BLOCKED — one production-proof blocker remains.**
+**READY — all internal release gates pass.**
 
-The public package, submission story, safety boundary and final video are ready. The only release blocker is the live Apertus parse path for the default Northstar scenario: the latest observed production run did not preserve all explicit fields and therefore stopped at S3 UNKNOWN instead of the intended S5 RED / B2 state.
+The public package, deployment, live Apertus path, submission story, public-safety boundary and final video are internally release-ready. External hackathon form fields, upload limits and submission-window requirements remain separate from this technical gate.
 
 ## Gate checklist
 
@@ -18,8 +18,9 @@ The public package, submission story, safety boundary and final video are ready.
 
 ### 2. Secret / credential hygiene — PASS
 - Public-safe manifest excludes deployment credentials and private research assets.
-- Repository code search returned no `hf_` token string.
-- `HF_TOKEN` remains described as server-side only.
+- Repository code search returned no exposed Hugging Face token value.
+- `HF_TOKEN` remains server-side only.
+- Production smoke output reports `secret_exposed: false`.
 
 ### 3. Public-safety / science boundary — PASS
 - Synthetic/public-safe scenarios only.
@@ -33,7 +34,7 @@ Canonical judge flow is locked:
 
 Scenario → Apertus → Rules → Decision → Why / Fix → Systemic lens
 
-Intended proof path:
+Proof path:
 
 95 min > 60 min → S5 RED / B2 → repair execution → 45 min → S6 UNKNOWN → systemic lens → S7 UNKNOWN.
 
@@ -48,54 +49,52 @@ Verified final artifact:
 - reconstructed public-safe product walkthrough, not represented as continuous live capture.
 
 ### 6. Deployment status — PASS
-Latest repository commit checked for deployment status:
-- commit: `4b6fc83b3acf1b9e23e93eba89f1960f01ecb9da`
+Live-parse code and smoke-gate commit:
+- `14ad08d19127934124dd2865b61ae9eb3cbb3a7b`
 - Vercel status: SUCCESS.
 
-### 7. Live Apertus status — PASS from existing proof
-Existing proof records:
+### 7. Live Apertus status — PASS
+Production proof records show:
 - configured: true
 - mode: live
 - model: `swiss-ai/Apertus-8B-Instruct-2509:publicai`
-- secret_exposed: false.
+- secret exposure blocked.
 
-### 8. Live Apertus explanation / challenge — PASS from existing proof
+### 8. Live Apertus explanation / challenge — PASS
 Existing production evidence shows Apertus returning a live explanation/challenge while preserving the deterministic decision and exposing missing evidence.
 
-### 9. Live Apertus parse — BLOCKER
-Latest observed production screenshots show:
-- Apertus live is active;
-- 60-minute target is preserved;
-- 95-minute observed recovery is preserved;
-- independent route and tested state are preserved;
-- but `critical_workload` and `failure_domain_known` remain UNKNOWN;
-- deterministic rules therefore stop at S3 `Failure domain is not proven` instead of S5 RED / B2.
+### 9. Live Apertus parse — PASS
+The production path now includes narrow host-side explicit-fact reconciliation after Apertus extraction. It may only restore facts literally present in the scenario and cannot infer downstream risk states.
 
-This fails the canonical submission proof path.
+Automated production smoke proof:
+- GitHub Actions run: `37000909044`
+- workflow job: `production-smoke`
+- conclusion: SUCCESS
+- first attempt HTTP: 200
+- mode: live
+- model: `swiss-ai/Apertus-8B-Instruct-2509:publicai`
+- critical workload: `retail payments processing service`
+- recovery target: 60 min
+- failure domain known: YES
+- recovery route outside failure domain: YES
+- same workload supported: YES
+- execution tested: YES
+- observed recovery: 95 min
+- simultaneous demand: UNKNOWN
+- capacity: UNKNOWN
+- deterministic expected result: S5 RED / B2 / REPAIR_EXECUTION
+- parse latency observed in smoke: 4321 ms
+- secret_exposed: false
 
-The current parser prompt already contains explicit field-level instructions for the Northstar wording, so prompt-only hardening is not enough evidence of closure.
+Closure log line:
+`PASS: production live Apertus parse -> 60/95 -> S5 RED/B2`
 
-## Exact release closure
+See `LIVE_PARSE_CLOSURE.md` for the exact closure record.
 
-Do not submit as FINAL until the production parse path is made robust and one production-level smoke test proves the following from the default Northstar text:
+## Final internal release result
 
-- critical workload = stated retail-payments workload;
-- recovery target = 60 min;
-- failure domain known = YES;
-- recovery route outside failure domain = YES;
-- same workload supported = YES;
-- execution tested = YES;
-- observed recovery = 95 min;
-- simultaneous demand = UNKNOWN;
-- capacity = UNKNOWN;
-- deterministic result = S5 RED / B2 / REPAIR_EXECUTION.
+**READY FOR SUBMISSION PACKAGE ASSEMBLY.**
 
-## Recommended technical closure path
+No remaining internal science, product, live-Apertus, deployment, public-safety or video blocker is recorded in this gate.
 
-Add a narrow host-side explicit-fact reconciliation layer after Apertus extraction and before deterministic rules. It may only recover facts that are literally present in the submitted scenario and must never infer downstream risk, capacity shortage, probability, or adequacy. Then add an automated production smoke test against `/api/apertus/parse` using the canonical synthetic Northstar scenario and fail CI unless the exact S5/B2 preconditions are returned.
-
-This keeps the architecture intact:
-- Apertus still performs the language extraction;
-- host validation prevents loss of explicit facts;
-- deterministic rules remain authoritative;
-- UNKNOWN remains UNKNOWN when no explicit fact exists.
+Before pressing the external hackathon submit button, only verify the platform-specific form requirements, required links, upload/hosting limits, deadline, and any mandatory team/profile fields.
