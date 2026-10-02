@@ -1,49 +1,38 @@
 # Systemic Resilience Copilot — Final YouTube / Devpost Upload Package V3
 
-**Status:** METADATA LOCKED — WAITING FOR FINAL V3 RENDER
+**Status:** READY FOR YOUTUBE UPLOAD
 
-The earlier 2:26.3 walkthrough master is superseded for final submission. Upload only the judge-first V3 film unless production of V3 fails completely.
+Upload only the final judge-first V3 film. The legacy 2:26.3 master is superseded.
 
-Authoritative files:
-- `video/VOICEOVER_MASTER.md`
-- `video/VOICEOVER_CAPTIONS_V2.srt`
-- `video/EDIT_TIMING_MAP_V2.csv`
-- `video/SCREEN_CAPTURE_SHOTLIST.md`
-- `video/FINAL_YOUTUBE_PRODUCTION_BIBLE.md`
-- `video/VIDEO_SYNC_AND_DESIGN_AUDIT.md`
+## Final master
 
-## Final master filename
+Descript release:
+- project: `Systemic Resilience Copilot — FINAL V3 FILM`
+- composition: `FINAL V3 FILM`
+- composition ID: `c3c5d223-4c8d-4427-8f29-928f664d6290`
+- published preview: `https://share.descript.com/view/1O7fVkKJEW2`
+
+Final properties:
+- resolution: **1920×1080**
+- frame rate: **30 fps**
+- runtime: **128.4 s (2:08.4)**
+- burned-in English captions
+- clean V3 narration
+- public-safe edited product walkthrough
+
+Preferred upload filename:
 
 `Systemic_Resilience_Copilot_YOUTUBE_FINAL_V3.mp4`
-
-Target properties:
-- 1920×1080 minimum
-- 30 fps
-- **2:24 target runtime**
-- H.264 High Profile + AAC 48 kHz
-- judge-first product-film edit
-- burned-in English captions
-- fast-start / web optimized
-
-## Host
-
-Use **YouTube** because the live Devpost field accepts YouTube or Vimeo URLs.
-
-Visibility: **Unlisted** unless the hackathon explicitly requires Public.
 
 ## Final YouTube title
 
 **A Backup Exists. Will It Recover in Time? | Systemic Resilience Copilot**
 
-## First two description lines
-
-Systemic Resilience Copilot turns normal-language recovery evidence into a traceable next action. Apertus structures and explains; deterministic rules preserve the decision state and missing evidence as `UNKNOWN`.
-
-## Full description
+## Final description
 
 **Systemic Resilience Copilot** is an AI-assisted decision-support prototype for banking ICT recoverability, built for Hack Apertus.
 
-Apertus structures explicitly stated recovery evidence from normal-language scenarios and later challenges/explains the fixed result. Deterministic rules remain authoritative for the recovery state and next justified action.
+Apertus structures explicitly stated recovery evidence from normal-language scenarios and later challenges and explains the fixed result. Deterministic rules remain authoritative for the recovery state and the next justified action.
 
 Main product path:
 **95 min > 60 min → S5 RED / B2 → REPAIR_EXECUTION → 45 min → S6 UNKNOWN → Systemic lens → S7 UNKNOWN**
@@ -59,55 +48,61 @@ https://github.com/rostys-fintech/systemic-resilience-copilot
 Technical report:
 https://github.com/rostys-fintech/systemic-resilience-copilot/blob/main/TECHNICAL_REPORT.md
 
-The film uses public-safe synthetic scenarios and edited product footage. It is not a continuous live-browser recording.
+The film is a public-safe edited product walkthrough built from synthetic demo scenarios. It is not a continuous live-browser recording.
 
-## Thumbnail direction
+## Final thumbnail
 
-Use a real high-resolution product frame.
+Locked thumbnail file created from the real product frame:
 
-Composition:
-- dark navy hero;
-- `95 min > 60 min` is the visual anchor;
-- short text: **WILL IT RECOVER IN TIME?**;
-- small SRC/product mark;
+`Systemic_Resilience_Copilot_Youtube_Thumbnail_FINAL_v2.png`
+
+Thumbnail design:
+- 1280×720;
+- actual Northstar decision card from the product;
+- dark navy institutional background;
+- headline: **WILL IT RECOVER IN TIME?**;
+- proof anchor: **95 MIN > 60 MIN**;
+- no stock imagery;
+- no generic AI imagery;
 - no collage;
-- no faces;
-- no generic AI robot;
-- no clickbait language;
-- no more than 5–6 headline words.
+- no clickbait language.
 
-## Suggested YouTube settings
+## YouTube upload settings
 
 - Visibility: **Unlisted**
 - Audience: **No, it’s not made for kids**
-- Embedding: allow embedding if shown
-- Comments: optional / not needed for judging
-- Chapters: unnecessary for a 2:24 film
-- Upload the final thumbnail manually after video processing
+- Category: **Science & Technology**
+- Language: **English**
+- Recording date/location: leave blank unless required
+- Paid promotion: **No**
+- Allow embedding: **Yes**
+- Automatic chapters: optional; not needed for a 2:08 film
+- Comments: default or off; irrelevant to judging
+- License: Standard YouTube License
 
-For altered/synthetic-content questions, answer according to the actual YouTube UI and the fact that this is an edited software-product demonstration using synthetic demo scenarios, not documentary footage of real events.
+Suggested tags, only if the UI exposes them:
+
+`Apertus, AI, banking, operational resilience, ICT resilience, DORA, fintech, hackathon, recovery testing, systemic resilience`
+
+## Thumbnail / metadata QA
+
+Before publishing:
+1. select the final V3 MP4, not the legacy 2:26.3 file;
+2. upload `Systemic_Resilience_Copilot_Youtube_Thumbnail_FINAL_v2.png`;
+3. use the exact title above;
+4. paste the exact description above;
+5. confirm visibility = **Unlisted**;
+6. wait until HD processing reaches 1080p;
+7. open the public watch URL in an incognito/private window;
+8. verify audio, burned captions and the five proof states;
+9. use the canonical `youtube.com/watch?...` or `youtu.be/...` URL in Devpost, never a Studio edit URL.
 
 ## Devpost field
 
-Paste the canonical YouTube watch URL into:
+Paste the verified YouTube watch URL into:
 
 **Project details → Project Media → Video demo link**
 
-Do not paste a YouTube Studio/edit URL.
-
-## Final URL QA
-
-Before saving Devpost:
-
-1. open the watch URL in incognito/private mode;
-2. confirm the full V3 film plays without login;
-3. confirm audio works;
-4. confirm burned-in captions remain readable at 1080p and 720p;
-5. confirm `95 > 60`, `S5 RED · B2`, `45 min`, `S6 UNKNOWN`, and `S7 UNKNOWN` are legible;
-6. confirm the thumbnail uses the real product and matches final design;
-7. confirm description does not call the film a continuous live recording;
-8. paste that verified watch URL into Devpost.
-
 ## Final rule
 
-Do not upload the old master simply because it already exists. The Devpost/YouTube version is the synchronized **judge-first V3 product film** defined by the current production package.
+YouTube is hosting for judging. Optimize for clarity and accurate product proof, not clickbait. The film must remain described as a **product demo / public-safe edited product walkthrough**, with the live app available separately.
