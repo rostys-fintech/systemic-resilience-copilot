@@ -1,0 +1,40 @@
+name: Track 2B Docker smoke
+on:
+  push:
+    paths:
+      - 'Dockerfile'
+      - '.dockerignore'
+      - 'Makefile'
+      - 'scripts/production-server.mjs'
+      - 'api/**'
+      - 'lib/**'
+      - 'app-v10.*'
+      - 'track_2b/**'
+      - '.github/workflows/hack-apertus-docker.yml'
+  workflow_dispatch:
+jobs:
+  docker-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build Docker image
+        run: docker build -t resilience-copilot:test .
+      - name: Start synthetic offline test server
+        run: |
+          docker run -d --name resilience-test -p 18765:18765 -e APERTUS_MOCK=1 resilience-copilot:test
+          sleep 4
+      - name: Check front end and API contract (mock only)
+        run: |
+          set -eu
+          curl --fail --silent --show-error http://localhost:18765/ -o /tmp/home.html
+          grep -qi '<html' /tmp/home.html
+          curl --fail --silent --show-error http://localhost:18765/api/apertus/status | grep -q '"mode":"mock"'
+          curl --fail --silent --show-error -X POST -H 'Content-Type: application/json' \
+            -d '{"release_class":"SYNTHETIC","text":"The workload is payments and recovery takes 95 minutes against a 60-minute tolerance."}' \
+            http://localhost:18765/api/apertus/parse | grep -q '"ok":true'
+      - name: Show logs if failed
+        if: failure()
+        run: docker logs resilience-test || true
+      - name: Stop test container
+        if: always()
+        run: docker rm -f resilience-test || true
