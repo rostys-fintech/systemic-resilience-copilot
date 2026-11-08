@@ -33,7 +33,13 @@ export default async function handler(req,res){
       });
     }finally{clearTimeout(timeout)}
     const rawText=await r.text();
-    if(!r.ok) return res.status(502).json({ok:false,error:`Apertus provider HTTP ${r.status}: ${rawText.slice(0,400)}`});
+    if (!r.ok) {
+      if (r.status === 402) return res.status(503).json({
+        ok:false,code:"PROVIDER_CREDITS_REQUIRED",
+        error:"Live Apertus is unavailable because the inference provider requires additional credits."
+      });
+      return res.status(502).json({ok:false,code:"PROVIDER_REQUEST_FAILED",error:`Apertus provider request failed (HTTP ${r.status}).`});
+    }
     const raw=JSON.parse(rawText);
     const content=raw?.choices?.[0]?.message?.content;
     const modelParsed=validateParsedScenario(extractJson(content));
