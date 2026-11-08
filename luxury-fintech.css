@@ -206,3 +206,53 @@ body:before{
   body{background:linear-gradient(180deg,#cdd4d8,#d8dde0)!important}
   .flow{background:linear-gradient(180deg,#273139,#1f282e)!important}
 }
+
+
+/* 2026-11-08 mobile QA: equal recovery metrics and readable systemic node. */
+@media (max-width:600px){
+  .heroProof{
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    align-items:stretch!important;
+    gap:9px!important;
+  }
+  .heroProof > .proofVs{display:none!important}
+  .heroProof > .proofItem{
+    display:flex!important;
+    flex-direction:column!important;
+    justify-content:center!important;
+    align-items:flex-start!important;
+    width:100%!important;
+    min-width:0!important;
+    min-height:108px;
+    padding:13px 10px!important;
+  }
+  .heroProof > .proofItem strong{
+    font-size:clamp(16px,5.3vw,27px)!important;
+    line-height:1.15!important;
+    white-space:nowrap!important;
+    overflow-wrap:normal!important;
+  }
+  .heroProof > .proofItem span{
+    font-size:10px!important;
+    line-height:1.35!important;
+    overflow-wrap:break-word!important;
+  }
+}
+/* Informational diagram node, not a button. Keep text high-contrast in both themes. */
+.fabricHub{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:5px;
+  max-width:100%;
+  min-height:74px;
+  border-radius:17px!important;
+  padding:14px 12px!important;
+  color:#f7fafc!important;
+  cursor:default!important;
+  text-align:center;
+}
+.fabricHub small{color:#cfdee8!important;line-height:1.35!important;font-size:10px!important}
+.fabricHub strong{color:#fff!important;line-height:1.2!important;font-size:18px!important;overflow-wrap:anywhere}
